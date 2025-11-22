@@ -4,6 +4,7 @@ import { Contact } from '../Contact';
 import { DepthSection } from '../DepthSection';
 import { Education } from '../Education';
 import { Experience } from '../Experience';
+import { Navbar } from '../Navbar';
 import { Profile } from '../Profile';
 import { ProjectsDetailed } from '../ProjectsDetailed';
 import { ResearchDetailed } from '../ResearchDetailed';
@@ -12,32 +13,36 @@ import { SectionOverview } from '../SectionOverview';
 const UI = () => {
     return (
         <main className='relative z-40 w-screen'>
-            <Profile />
-
-            <section className='min-h-screen'>
+            <section id='home' className='min-h-screen'>
+                <Profile />
                 <SectionOverview />
             </section>
 
-            <section className='min-h-screen'>
+            <section id='about' className='min-h-screen'>
                 <About />
             </section>
 
-            <section className='min-h-screen'>
+            <section id='education' className='min-h-screen'>
                 <Education />
             </section>
-            <section className='min-h-screen'>
+
+            <section id='experience' className='min-h-screen'>
                 <Experience />
             </section>
-            <section className='min-h-screen'>
+
+            <section id='research' className='min-h-screen'>
                 <ResearchDetailed />
             </section>
-            <section className='min-h-screen'>
+
+            <section id='achievements' className='min-h-screen'>
                 <AchievementsDetailed />
             </section>
-            <section className='min-h-screen'>
+
+            <section id='projects' className='min-h-screen'>
                 <ProjectsDetailed />
             </section>
-            <section className='min-h-screen'>
+
+            <section id='contact' className='min-h-screen'>
                 <Contact />
             </section>
         </main>

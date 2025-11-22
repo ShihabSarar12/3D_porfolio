@@ -9,10 +9,7 @@ export function Profile() {
     };
 
     return (
-        <section
-            id='home'
-            className='relative w-full min-h-screen flex flex-col justify-center items-center overflow-hidden pt-24'
-        >
+        <section className='relative w-full min-h-screen flex flex-col justify-center items-center overflow-hidden pt-24'>
             <div className='relative z-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
                 <div className='grid lg:grid-cols-2 gap-12 items-center'>
                     <motion.div

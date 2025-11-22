@@ -11,7 +11,7 @@ import Diver from './Diver';
 // import { useScrollSceneMapper } from '../../hooks/useScrollSceneMapper';
 import useUIToSceneMapper from '../../hooks/useUIToSceneMapper';
 
-const Scene = ({ uiHeight, pages }: { uiHeight: number; pages: number }) => {
+const Scene = ({ uiHeight }: { uiHeight: number; pages: number }) => {
     // const { sections } = useScrollSceneMapper({
     //     uiTotalHeight: uiHeight,
     //     pages: pages,
@@ -54,7 +54,9 @@ const Scene = ({ uiHeight, pages }: { uiHeight: number; pages: number }) => {
                     position={[0, sceneDivision?.[3], -0]}
                     scale={[0.25, 0.25, 0.25]}
                 />
-                <Sand position={[0, sceneDivision?.[4], -10]} />
+                {window.innerWidth < 600 ? null : (
+                    <Sand position={[0, sceneDivision?.[4], -10]} />
+                )}
                 <group position={[0, sceneDivision?.[0], -2]}>
                     <Bubbles count={12} roam={{ x: 7, y: 9, z: 2 }} />
                 </group>

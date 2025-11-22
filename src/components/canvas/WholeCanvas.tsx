@@ -12,6 +12,7 @@ import {
     useRef,
     useState,
 } from 'react';
+import { ScrollBridge } from '../ScrollBridge';
 
 const UiMeasured = memo(
     ({ onHeightChange }: { onHeightChange: (height: number) => void }) => {
@@ -84,6 +85,7 @@ const WholeCanvas = ({ scenePages = 1 }) => {
                     <Scroll html>
                         <UiMeasured onHeightChange={handleHeightChange} />
                     </Scroll>
+                    <ScrollBridge />
                 </ScrollControls>
             </Canvas>
         </ErrorBoundary>
