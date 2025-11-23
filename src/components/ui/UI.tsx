@@ -21,10 +21,8 @@ const UI = () => {
   };
 
   useEffect(() => {
-    // scroll on initial load
     scrollToHash();
 
-    // scroll on hash change
     window.addEventListener("hashchange", scrollToHash);
     return () => window.removeEventListener("hashchange", scrollToHash);
   }, []);
