@@ -12,8 +12,8 @@ export default function AchievementDetails() {
     );
 
   return (
-    <div className="min-h-screen flex items-center justify-center py-20 px-4 bg-linear-to-r from-gray-900 to-black">
-      <div className="max-w-3xl w-full p-8 rounded-3xl bg-white/10 backdrop-blur-lg border border-white/20 text-white shadow-lg">
+    <div className="min-h-screen flex items-center justify-center py-20 px-4 bg-[#074387]">
+      <div className=" w-7xl p-8 rounded-3xl bg-white/10 backdrop-blur-lg border border-white/20 text-white shadow-lg">
         <h2 className="text-2xl font-semibold mb-2">{achievement.title}</h2>
         <p className="text-white/70 mb-4">
           {achievement.organization} | {achievement.date}
