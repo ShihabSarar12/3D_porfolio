@@ -16,7 +16,6 @@ const UI = () => {
                 <Profile />
                 <SectionOverview />
             </section>
-
             <section id='about' className='min-h-screen'>
                 <About />
             </section>
