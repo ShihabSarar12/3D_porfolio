@@ -1,3 +1,4 @@
+
 import { useParams } from "react-router-dom";
 import { research } from "../data/portfolio";
 import { FileText, Github, Users, TrendingUp, Award, Star } from "lucide-react";
@@ -7,22 +8,24 @@ export default function ResearchPaperPage() {
   const { id } = useParams();
   const paper = research.find((p) => p.id === Number(id));
 
-  if (!paper)
+    if (!paper)
+        return (
+            <div className='text-white p-10 bg-linear-to-br from-blue-900 to-blue-700 min-h-screen'>
+                Paper not found.
+            </div>
+        );
+
     return (
-      <div className="text-white p-10 bg-linear-to-br from-blue-900 to-blue-700 min-h-screen">
-        Paper not found.
-      </div>
-    );
-
-  return (
-    <div className="min-h-screen bg-linear-to-br from-blue-500 to-cyan-500 text-white py-16 px-6">
-      <a
-        href="/#research"
-        className="text-blue-300 hover:text-blue-100 hover:underline mb-6 inline-block transition"
-      >
-        ← Back to Research
-      </a>
-
+        <div className='min-h-screen bg-linear-to-br from-blue-500 to-cyan-500 text-white py-16 px-6'>
+            <button
+                onClick={async () => {
+                    localStorage.setItem('scrollTo', '#research');
+                    window.history.back();
+                }}
+                className='text-blue-300 hover:text-blue-100 hover:underline mb-6 inline-block transition'
+            >
+                ← Back to Research
+            </button>
       <h1 className="text-3xl font-bold mb-6">{paper.title}</h1>
 
       <ResearchCard paper={paper} />
