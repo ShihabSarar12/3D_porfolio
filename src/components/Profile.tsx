@@ -9,7 +9,10 @@ export function Profile() {
     };
 
     return (
-        <section className='relative w-full min-h-screen flex flex-col justify-center items-center overflow-hidden pt-24'>
+        <section
+            id='home'
+            className='relative w-full min-h-screen flex flex-col justify-center items-center overflow-hidden pt-24'
+        >
             <div className='relative z-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
                 <div className='grid lg:grid-cols-2 gap-12 items-center'>
                     <motion.div
@@ -63,7 +66,7 @@ export function Profile() {
                             <span className='block text-white text-4xl sm:text-5xl lg:text-6xl font-bold'>
                                 {personalInfo.name}
                             </span>
-                            <span className='block text-xl font-medium sm:text-2xl lg:text-3xl text-white/70 bg-clip-text text-transparent'>
+                            <span className='block text-xl font-medium sm:text-2xl lg:text-3xl text-white/70 '>
                                 {personalInfo.title}
                             </span>
                         </motion.h1>
@@ -85,12 +88,12 @@ export function Profile() {
                         >
                             <a
                                 href={`mailto:${personalInfo.email}`}
-                                className='flex items-center gap-2 px-4 py-2 rounded-lg border border-white/10 bg-white/10 hover:bg-white/20 transition-colors border border-white/80 text-white backdrop-blur-sm'
+                                className='flex items-center gap-2 px-4 py-2 rounded-lg border bg-white/10 hover:bg-white/20 transition-colors border-white/80 text-white backdrop-blur-sm'
                             >
                                 <Mail className='w-5 h-5 mr-2' />
                                 Get in Touch
                             </a>
-                            <button className='flex items-center gap-2 px-4 py-2 rounded-lg border border-white/10 bg-white/10 hover:bg-white/20 border border-white/80 transition-colors text-white backdrop-blur-sm'>
+                            <button className='flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/80 transition-colors text-white backdrop-blur-sm'>
                                 <Download className='w-5 h-5 mr-2' />
                                 Download CV
                             </button>

@@ -1,153 +1,131 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import {
-    FileText,
-    ExternalLink,
-    Github,
-    Users,
-    Calendar,
-    TrendingUp,
-} from 'lucide-react';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState, useRef } from 'react';
 import { research } from '../data/portfolio';
+import { ContentRenderer } from '../components/ContentRenderer';
+import { motion, AnimatePresence } from 'framer-motion';
 
-export function Research() {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true });
+export default function ResearchPaperPage() {
+    const { id } = useParams();
+    const paper = research.find((p) => p.id === Number(id));
+    const [modalContent, setModalContent] = useState<string | null>(null);
+    const modalRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (e: MouseEvent) => {
+            if (
+                modalRef.current &&
+                !modalRef.current.contains(e.target as Node)
+            ) {
+                setModalContent(null);
+            }
+        };
+        if (modalContent)
+            document.addEventListener('mousedown', handleClickOutside);
+        else document.removeEventListener('mousedown', handleClickOutside);
+        return () =>
+            document.removeEventListener('mousedown', handleClickOutside);
+    }, [modalContent]);
+
+    if (!paper)
+        return (
+            <div className='text-white p-10 bg-linear-to-br from-blue-900 to-blue-700 min-h-screen'>
+                Paper not found.
+            </div>
+        );
 
     return (
-        <section className='relative py-20 lg:py-32'>
-            <div
-                id='research'
-                className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'
+        <div className='min-h-screen bg-linear-to-br from-blue-500 to-cyan-500 text-white py-16 px-6'>
+            <button
+                onClick={async () => {
+                    localStorage.setItem('scrollTo', '#research');
+                    window.history.back();
+                }}
+                className='text-blue-300 hover:text-blue-100 hover:underline mb-6 inline-block transition'
             >
-                <motion.div
-                    ref={ref}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6 }}
-                >
-                    <div className='text-center mb-16'>
-                        <motion.span
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.5 }}
-                            className='inline-block px-4 py-2 mb-2 rounded-full bg-linear-to-r from-blue-500/50 to-purple-600/50 border border-blue-500/60 font-bold text-white drop-shadow-md'
-                        >
-                            <span>Research Contributions</span>
-                        </motion.span>
-                        <h2 className='mb-4'>Published Research</h2>
-                        <p className='text-muted-foreground max-w-2xl mx-auto'>
-                            Advancing the field through cutting-edge research
-                            and innovation
-                        </p>
-                    </div>
+                ← Back to Research
+            </button>
 
-                    <div className='grid lg:grid-cols-2 xl:grid-cols-3 gap-8'>
-                        {research.map((paper, index) => (
-                            <motion.div
-                                key={paper.id}
-                                initial={{ opacity: 0, y: 50 }}
-                                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                transition={{
-                                    duration: 0.6,
-                                    delay: 0.1 * index,
-                                }}
-                                whileHover={{
-                                    scale: 1.03,
-                                    y: -8,
-                                    backdropFilter: 'blur(16px)',
-                                    transition: {
-                                        duration: 0.25,
-                                        ease: 'easeOut',
-                                    },
-                                }}
-                            >
-                                <motion.div className='h-full p-6 rounded-2xl border border-border hover:border-white/20 transition-all flex flex-col'>
-                                    <div className='flex items-start gap-3 mb-4'>
-                                        <div className='shrink-0 p-3 rounded-lg bg-linear-to-br from-blue-500 to-purple-600'>
-                                            <FileText className='w-6 h-6 text-white' />
-                                        </div>
-                                        <div className='flex-1 min-w-0'>
-                                            <span className='inline-block px-2 py-1 rounded bg-muted text-muted-foreground mb-2'>
-                                                {paper.type}
-                                            </span>
-                                        </div>
-                                    </div>
+            <h1 className='text-3xl font-bold mb-6'>{paper.title}</h1>
+            <p className='mb-10 text-white/90'>{paper.description}</p>
 
-                                    <h3 className='mb-3 line-clamp-2'>
-                                        {paper.title}
-                                    </h3>
-
-                                    <div className='flex items-start gap-2 mb-3 text-muted-foreground'>
-                                        <Users className='w-4 h-4 shrink-0 mt-0.5' />
-                                        <p className='line-clamp-2'>
-                                            {paper.authors}
-                                        </p>
-                                    </div>
-
-                                    <div className='space-y-2 mb-4 text-muted-foreground'>
-                                        <p className='italic'>{paper.venue}</p>
-                                        <div className='flex items-center gap-2'>
-                                            <Calendar className='w-4 h-4' />
-                                            <span>{paper.date}</span>
-                                        </div>
-                                    </div>
-
-                                    <p className='text-muted-foreground mb-4 grow'>
-                                        {paper.description}
-                                    </p>
-
-                                    <div className='mb-4 p-3 rounded-lg bg-linear-to-r from-blue-500/10 to-purple-600/10 border border-blue-500/20'>
-                                        <div className='flex items-start gap-2'>
-                                            <TrendingUp className='w-4 h-4 text-blue-500 shrink-0 mt-0.5' />
-                                            <p className='text-foreground'>
-                                                {paper.impact}
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div className='flex flex-wrap gap-2 mb-4'>
-                                        {paper.tags.map((tag) => (
-                                            <span
-                                                key={tag}
-                                                className='px-2 py-1 rounded bg-muted text-muted-foreground'
-                                            >
-                                                {tag}
-                                            </span>
-                                        ))}
-                                    </div>
-
-                                    <div className='flex flex-wrap gap-3 pt-4 border-t border-border'>
-                                        {paper.links.paper && (
-                                            <a
-                                                href={paper.links.paper}
-                                                target='_blank'
-                                                rel='noopener noreferrer'
-                                                className='flex items-center gap-2 px-3 py-2 rounded-lg bg-linear-to-r from-blue-500 to-purple-600 text-white hover:opacity-90 transition-opacity'
-                                            >
-                                                <ExternalLink className='w-4 h-4' />
-                                                <span>Paper</span>
-                                            </a>
-                                        )}
-                                        {paper.links.code && (
-                                            <a
-                                                href={paper.links.code}
-                                                target='_blank'
-                                                rel='noopener noreferrer'
-                                                className='flex items-center gap-2 px-3 py-2 rounded-lg border border-border hover:bg-accent transition-colors'
-                                            >
-                                                <Github className='w-4 h-4' />
-                                                <span>Code</span>
-                                            </a>
-                                        )}
-                                    </div>
-                                </motion.div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.div>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6'>
+                {[
+                    {
+                        title: 'The Story Behind It',
+                        content: paper.storyBehindIt,
+                        image: paper.storyImage,
+                    },
+                    {
+                        title: 'Problem Statement',
+                        content: paper.problemStatement,
+                    },
+                    {
+                        title: 'Methodology',
+                        content: paper.methodology,
+                        image: paper.methodologyImage,
+                    },
+                    {
+                        title: 'Results & Impact',
+                        content: paper.result,
+                        image: paper.resultImage,
+                    },
+                ].map((sec, i) => (
+                    <Section
+                        key={i}
+                        title={sec.title}
+                        content={sec.content}
+                        image={sec.image}
+                        onReadMore={() => setModalContent(sec.content)}
+                    />
+                ))}
             </div>
-        </section>
+
+            <AnimatePresence>
+                {modalContent && (
+                    <motion.div
+                        className='fixed inset-0 bg-black/70 flex items-center justify-center p-6 z-50 overflow-auto'
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                    >
+                        <motion.div
+                            ref={modalRef}
+                            className='bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 max-w-2xl w-full relative overflow-auto max-h-[80vh]'
+                            initial={{ y: 50, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: 50, opacity: 0 }}
+                        >
+                            <button
+                                onClick={() => setModalContent(null)}
+                                className='absolute top-3 right-3 text-white hover:text-blue-300 transition text-lg'
+                            >
+                                ✕
+                            </button>
+                            <ContentRenderer content={modalContent} />
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
+    );
+}
+
+function Section({ title, content, image, onReadMore }: any) {
+    return (
+        <div className='bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 transition hover:scale-[1.02]'>
+            <h2 className='text-xl font-semibold mb-3'>{title}</h2>
+            <div className='line-clamp-3 mb-4 text-white/90'>
+                <ContentRenderer content={content} />
+            </div>
+            {image && (
+                <img src={image} alt={title} className='rounded-lg mb-4' />
+            )}
+            <button
+                onClick={onReadMore}
+                className='px-4 py-2 rounded-lg bg-white/20 hover:bg-white/30 text-white transition-all duration-300'
+            >
+                Read More
+            </button>
+        </div>
     );
 }

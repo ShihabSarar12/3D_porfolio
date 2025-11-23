@@ -1,10 +1,9 @@
+import { useEffect } from 'react';
 import { About } from '../About';
 import { AchievementsDetailed } from '../AchievementsDetailed';
 import { Contact } from '../Contact';
-import { DepthSection } from '../DepthSection';
 import { Education } from '../Education';
 import { Experience } from '../Experience';
-import { Navbar } from '../Navbar';
 import { Profile } from '../Profile';
 import { ProjectsDetailed } from '../ProjectsDetailed';
 import { ResearchDetailed } from '../ResearchDetailed';

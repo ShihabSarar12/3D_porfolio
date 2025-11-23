@@ -2,7 +2,6 @@ import { useCallback, useState } from 'react';
 import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { personalInfo } from '../data/portfolio';
-import { useScroll } from '@react-three/drei';
 
 const navItems = [
     { name: 'Home', href: '#home' },
@@ -18,28 +17,24 @@ const navItems = [
 export function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    const scrollToSection = useCallback(
-        (href: string) => {
-            const id = href.startsWith('#') ? href.slice(1) : href;
-            const el = document.getElementById(id);
-            const scroll: any = (window as any).__scrollControls;
-            const container = scroll?.el as HTMLDivElement | null;
-            if (!el || !container) return;
+    const scrollToSection = useCallback((href: string) => {
+        const id = href.startsWith('#') ? href.slice(1) : href;
+        const el = document.getElementById(id);
+        const scroll: any = (window as any).__scrollControls;
+        const container = scroll?.el as HTMLDivElement | null;
+        if (!el || !container) return;
 
-            const containerRect = container.getBoundingClientRect();
-            const elRect = el.getBoundingClientRect();
-            const targetTop =
-                elRect.top - containerRect.top + container.scrollTop;
+        const containerRect = container.getBoundingClientRect();
+        const elRect = el.getBoundingClientRect();
+        const targetTop = elRect.top - containerRect.top + container.scrollTop;
 
-            container.scrollTo({
-                top: targetTop,
-                behavior: 'smooth',
-            });
+        container.scrollTo({
+            top: targetTop,
+            behavior: 'smooth',
+        });
 
-            setIsMobileMenuOpen(false);
-        },
-        [scroll]
-    );
+        setIsMobileMenuOpen(false);
+    }, []);
 
     return (
         <motion.nav className='fixed w-full z-50 text-white backdrop-blur-2xl'>

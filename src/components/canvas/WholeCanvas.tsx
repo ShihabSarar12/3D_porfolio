@@ -13,6 +13,9 @@ import {
     useState,
 } from 'react';
 import { ScrollBridge } from '../ScrollBridge';
+import ResearchPaperPage from '../Research';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AchievementDetails from '../AchieveDetails';
 
 const UiMeasured = memo(
     ({ onHeightChange }: { onHeightChange: (height: number) => void }) => {
@@ -40,9 +43,27 @@ const UiMeasured = memo(
         }, [onHeightChange]);
 
         return (
-            <div ref={ref}>
-                <UI />
-            </div>
+            <BrowserRouter>
+                <Routes>
+                    <Route
+                        path='/'
+                        element={
+                            <div ref={ref}>
+                                <UI />
+                            </div>
+                        }
+                    />
+
+                    <Route
+                        path='/research/:id'
+                        element={<ResearchPaperPage />}
+                    />
+                    <Route
+                        path='/achievement/:id'
+                        element={<AchievementDetails />}
+                    />
+                </Routes>
+            </BrowserRouter>
         );
     }
 );
