@@ -8,18 +8,9 @@ import HerringSchool from './HerringSchool';
 import Sand from './Sand';
 import Shark from './Shark';
 import Diver from './Diver';
-// import { useScrollSceneMapper } from '../../hooks/useScrollSceneMapper';
 import useUIToSceneMapper from '../../hooks/useUIToSceneMapper';
 
 const Scene = ({ uiHeight }: { uiHeight: number; pages: number }) => {
-    // const { sections } = useScrollSceneMapper({
-    //     uiTotalHeight: uiHeight,
-    //     pages: pages,
-    //     sceneTop: 1.25,
-    //     sections: 4,
-    //     unitsPerScreen: 1,
-    // });
-    // ratio: -226.0702
     const { sceneDivision } = useUIToSceneMapper({
         uiHeight,
         ratio: -226.0702,

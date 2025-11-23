@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { About } from '../About';
 import { AchievementsDetailed } from '../AchievementsDetailed';
 import { Contact } from '../Contact';
@@ -16,7 +15,6 @@ const UI = () => {
                 <Profile />
                 <SectionOverview />
             </section>
-
             <section id='about' className='min-h-screen'>
                 <About />
             </section>
