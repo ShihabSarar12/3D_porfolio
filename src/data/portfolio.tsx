@@ -4,14 +4,12 @@ export const personalInfo = {
     name: 'Shihab Sarar',
     title: 'Computer Science & Engineering Professional',
     tagline: 'Building innovative solutions through code and research',
-    email: 'your.email@example.com',
-    phone: '+1 (555) 123-4567',
-    location: 'San Francisco, CA',
+    email: 'shihabsararchamok@gmail.com',
+    phone: '+8801788667080',
+    location: 'Dhaka, Bangladesh',
     links: {
-        github: 'https://github.com/yourusername',
-        linkedin: 'https://linkedin.com/in/yourusername',
-        twitter: 'https://twitter.com/yourusername',
-        portfolio: 'https://yourwebsite.com',
+        github: 'https://github.com/ShihabSarar12',
+        linkedin: 'https://www.linkedin.com/in/shihabsarar1201/',
     },
     bio: 'Passionate Computer Science & Engineering professional with expertise in full-stack development, machine learning, and distributed systems. I love solving complex problems and building scalable solutions that make a real impact.',
 };
@@ -131,7 +129,7 @@ export const research = [
         id: 1,
         title: 'Efficient Deep Learning Models for Edge Computing',
         authors: 'Your Name, Dr. Jane Smith, Dr. John Doe',
-        yourName: 'Your Name', // Used for bold highlighting
+        yourName: 'Your Name',
         venue: 'International Conference on Machine Learning (ICML) 2023',
         platform: 'ICML',
         date: 'July 2023',
@@ -154,7 +152,7 @@ I spent countless late nights in the lab, experimenting with different **model c
 The journey wasn't without setbacks. Our initial prototypes showed promise in simulation but **failed miserably** on actual hardware due to memory bandwidth constraints. It took **three months** of iterative refinement and close collaboration with hardware engineers to develop a solution that worked in practice.
 
 ![Hardware Testing](https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80)`,
-        storyImage: null, // Can add image URL here
+        storyImage: null,
         problemStatement: `**Challenge:** Modern deep learning models are **computationally expensive** and require substantial memory, making deployment on edge devices (smartphones, IoT sensors, drones) extremely challenging.
 
 **Specific Issues:**

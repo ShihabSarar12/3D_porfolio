@@ -1,13 +1,9 @@
 import { motion } from 'framer-motion';
 import { ChevronDown, Download, Mail } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
-import profileImage from '../../public/assets/profile.png';
+import profileImage from '../assets/profile.png';
 
 export function Profile() {
-    const scrollToNext = () => {
-        window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
-    };
-
     return (
         <section
             id='home'
@@ -50,7 +46,7 @@ export function Profile() {
                             transition={{ duration: 0.5 }}
                             className='mb-6'
                         >
-                            <span className='inline-block px-4 py-2 mb-2 rounded-full bg-white/10 border border-white/20 font-bold text-white drop-shadow-md'>
+                            <span className='inline-block px-4 py-2 mb-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 font-bold text-white drop-shadow-md'>
                                 <span className='text-white font-medium'>
                                     Welcome to my portfolio
                                 </span>
@@ -87,16 +83,24 @@ export function Profile() {
                             className='flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center'
                         >
                             <a
-                                href={`mailto:${personalInfo.email}`}
+                                href={`mailto:${encodeURIComponent(
+                                    personalInfo.email
+                                )}?subject=${encodeURIComponent(
+                                    'Reaching out from your personal website'
+                                )}&body=${encodeURIComponent('Hey there!')}`}
                                 className='flex items-center gap-2 px-4 py-2 rounded-lg border bg-white/10 hover:bg-white/20 transition-colors border-white/80 text-white backdrop-blur-sm'
                             >
                                 <Mail className='w-5 h-5 mr-2' />
                                 Get in Touch
                             </a>
-                            <button className='flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/80 transition-colors text-white backdrop-blur-sm'>
+                            <a
+                                className='flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/80 transition-colors text-white backdrop-blur-sm'
+                                href='./assets/Shihab_Sarar_CV.pdf'
+                                download='Shihab_Sarar_CV.pdf'
+                            >
                                 <Download className='w-5 h-5 mr-2' />
                                 Download CV
-                            </button>
+                            </a>
                         </motion.div>
                     </motion.div>
                 </div>
@@ -107,10 +111,7 @@ export function Profile() {
                     transition={{ duration: 1, delay: 1 }}
                     className='mt-20 text-center'
                 >
-                    <button
-                        onClick={scrollToNext}
-                        className='animate-bounce text-gray-300 hover:text-white transition-colors'
-                    >
+                    <button className='animate-bounce text-gray-300 hover:text-white transition-colors'>
                         <ChevronDown className='w-8 h-8' />
                     </button>
                 </motion.div>

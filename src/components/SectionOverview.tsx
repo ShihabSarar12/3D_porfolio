@@ -8,6 +8,7 @@ import {
     ArrowRight,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useCallback } from 'react';
 
 const sections = [
     {
@@ -59,10 +60,22 @@ const sections = [
 ];
 
 export function SectionOverview() {
-    const scrollToSection = (id: string) => {
-        const element = document.getElementById(id);
-        if (element) element.scrollIntoView({ behavior: 'smooth' });
-    };
+    const scrollToSection = useCallback((href: string) => {
+        const id = href.startsWith('#') ? href.slice(1) : href;
+        const el = document.getElementById(id);
+        const scroll: any = (window as any).__scrollControls;
+        const container = scroll?.el as HTMLDivElement | null;
+        if (!el || !container) return;
+
+        const containerRect = container.getBoundingClientRect();
+        const elRect = el.getBoundingClientRect();
+        const targetTop = elRect.top - containerRect.top + container.scrollTop;
+
+        container.scrollTo({
+            top: targetTop,
+            behavior: 'smooth',
+        });
+    }, []);
 
     return (
         <section className='relative py-20 lg:py-32'>

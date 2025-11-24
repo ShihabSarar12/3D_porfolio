@@ -23,11 +23,11 @@ export function Education() {
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.5 }}
                         >
-                            <span className='inline-block px-4 py-2 mb-2 rounded-full bg-white/10 border border-white/20 font-bold text-white drop-shadow-md'>
+                            <span className='inline-block px-4 py-2 mb-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 font-bold text-white drop-shadow-md'>
                                 Academic Background
                             </span>
                         </motion.span>
-                        <h2 className='mb-4 text-3xl font-semibold text-white drop-shadow-md'>
+                        <h2 className='mb-4 text-3xl font-medium text-white'>
                             Education
                         </h2>
                         <p className='text-white max-w-2xl mx-auto drop-shadow-md'>

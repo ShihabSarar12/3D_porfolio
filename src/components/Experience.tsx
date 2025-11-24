@@ -98,11 +98,11 @@ export function Experience() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.5 }}
-                            className='inline-block px-4 py-2 mb-2 rounded-full bg-white/10 border border-white/20 font-bold text-white drop-shadow-md'
+                            className='inline-block px-4 py-2 mb-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 font-bold text-white drop-shadow-md'
                         >
                             <span>Professional Journey</span>
                         </motion.span>
-                        <h2 className='mb-4 text-3xl font-semibold text-white'>
+                        <h2 className='mb-4 text-3xl font-medium text-white'>
                             Work Experience
                         </h2>
                         <p className='text-white max-w-2xl mx-auto'>

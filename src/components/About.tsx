@@ -98,11 +98,11 @@ export function About() {
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.5 }}
                         >
-                            <span className='inline-block px-4 py-2 mb-2 rounded-full bg-white/10 border border-white/20 font-bold text-white drop-shadow-md'>
+                            <span className='inline-block px-4 py-2 mb-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 font-bold text-white drop-shadow-md'>
                                 About Me
                             </span>
                         </motion.span>
-                        <h2 className='mb-4 text-3xl font-semibold text-white drop-shadow-md'>
+                        <h2 className='mb-4 text-3xl font-medium text-white'>
                             Passionate About Technology & Innovation
                         </h2>
                     </div>
@@ -114,7 +114,7 @@ export function About() {
                                 y: -3,
                                 backdropFilter: 'blur(16px)',
                                 transition: {
-                                    duration: 0.15,
+                                    duration: 0.25,
                                     ease: 'easeOut',
                                 },
                             }}
@@ -161,7 +161,7 @@ export function About() {
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.6, delay: 0.6 }}
                     >
-                        <h3 className='text-center mb-8 text-2xl font-semibold text-white drop-shadow-md'>
+                        <h3 className='text-center mb-4 text-3xl font-medium text-white'>
                             Technical Skills
                         </h3>
                         <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>

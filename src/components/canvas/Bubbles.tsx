@@ -2,8 +2,9 @@ import * as THREE from 'three';
 import { useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
+import bubbleTexture from '../../assets/textures/bubble.png';
 
-type Props = {
+type BubblesProps = {
     count?: number;
     roam?: { x: number; y: number; z: number };
     minSpeed?: number;
@@ -25,9 +26,9 @@ const Bubbles = ({
     driftAmp = 0.015,
     centerPull = 0.001,
     edgeSoftness = 0.75,
-}: Props) => {
+}: BubblesProps) => {
     const pointsRef = useRef<THREE.Points>(null!);
-    const texture = useTexture('./textures/bubble.png');
+    const texture = useTexture(bubbleTexture);
 
     const half = useMemo(
         () => ({
