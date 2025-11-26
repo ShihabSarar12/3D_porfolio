@@ -73,7 +73,7 @@ const ProjectCard = ({
                 },
             }}
         >
-            <div className='relative rounded-2xl overflow-hidden border border-white/10 shadow-lg group'>
+            <div className='relative rounded-2xl overflow-hidden border hover:border-white/20 border-white/10 shadow-lg group'>
                 <div className='absolute inset-0 bg-white/0 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-2xl' />
 
                 <div className='relative z-10 p-8 space-y-6'>

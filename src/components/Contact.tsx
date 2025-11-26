@@ -87,9 +87,9 @@ const Contact = () => {
                                                     ease: 'easeOut',
                                                 },
                                             }}
-                                            className='flex items-center gap-4 p-4 rounded-2xl backdrop-blur-none border border-white/20 shadow-lg transition-all group duration-200 hover:cursor-pointer'
+                                            className='flex items-center gap-4 p-4 rounded-2xl backdrop-blur-none border border-white/20 shadow-lg transition-all group duration-200 hover:cursor-pointer '
                                         >
-                                            <div className='p-3 rounded-lg border border-white/20 group-hover:scale-110 transition-transform'>
+                                            <div className='p-3 rounded-lg border border-white/20 group-hover:scale-110 transition-transform bg-white/10 hover:bg-white/20'>
                                                 <Icon className='w-5 h-5 text-white' />
                                             </div>
                                             <div>
@@ -133,9 +133,9 @@ const Contact = () => {
                                                     ease: 'easeOut',
                                                 },
                                             }}
-                                            className='p-3 rounded-2xl backdrop-blur-none border border-white/20 shadow-lg hover:cursor-pointer hover:text-white transition-all'
+                                            className='p-3 rounded-2xl backdrop-blur-none border border-white/20 shadow-lg hover:cursor-pointer hover:text-white transition-all bg-white/10 hover:bg-white/20'
                                         >
-                                            <social.icon className='w-6 h-6 text-white' />
+                                            <social.icon className='w-6 h-6 text-white ' />
                                         </motion.a>
                                     ))}
                                 </div>

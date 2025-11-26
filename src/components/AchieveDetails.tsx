@@ -40,7 +40,7 @@ const AchievementDetails = ({ id }: { id?: number }) => {
         categoryColors[achievement.category] || categoryColors.default;
 
     return (
-        <div className='min-h-screen bg-transparent text-white py-16 px-6'>
+        <div className='min-h-screen min-w-screen bg-transparent text-white py-16 px-6 flex justify-center items-center flex-col'>
             <button
                 onClick={() => {
                     window.history.back();
@@ -53,7 +53,7 @@ const AchievementDetails = ({ id }: { id?: number }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6 }}
-                className='p-8 rounded-2xl border border-white/10 shadow-lg text-white transition-all mb-8'
+                className='p-8 lg:w-5/6 sm:w-full rounded-2xl border border-white/10 shadow-lg text-white transition-all mb-8'
             >
                 <div className='px-4'>
                     <div className='flex items-center justify-between mb-6'>
@@ -81,7 +81,7 @@ const AchievementDetails = ({ id }: { id?: number }) => {
                         <div className='space-y-4 text-white/70'>
                             <ContentRenderer content={achievement.details} />
                             {achievement.image && (
-                                <div className='rounded-lg w-full flex justify-center items-center overflow-hidden'>
+                                <div className='rounded-lg w-full overflow-hidden'>
                                     <img
                                         src={achievement.image}
                                         alt={achievement.title}

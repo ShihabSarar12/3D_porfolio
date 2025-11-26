@@ -50,12 +50,12 @@ const ContentRenderer = ({ content }: ContentRendererProps) => {
                     return (
                         <div
                             key={index}
-                            className='rounded-lg flex items-center justify-center overflow-hidden my-4'
+                            className='rounded-lg overflow-hidden my-4'
                         >
                             <img
                                 src={part.content}
                                 alt={part.alt || 'Content image'}
-                                className='rounded-lg w-5/6 h-auto'
+                                className='block rounded-lg my-4 lg:w-2/3 sm:w-full max-h-[50rem]'
                                 loading='lazy'
                             />
                         </div>

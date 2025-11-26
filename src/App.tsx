@@ -22,12 +22,31 @@ const App = () => {
 
     if (!supports3D) {
         return (
-            <div>
-                <h1>Simple version</h1>
-                <p>
-                    Your device/browser does not fully support our 3D
-                    experience, so you are seeing a lightweight version instead.
-                </p>
+            <div className='w-screen h-screen bg-gray-900 flex flex-col justify-center items-center px-4 text-center'>
+                <div className='bg-red-600/20 border border-red-500 rounded-xl p-8 max-w-md shadow-lg'>
+                    <span className='text-6xl mb-4 block'>⚠️</span>
+                    <h1 className='text-2xl font-bold text-red-500 mb-2'>
+                        Browser Not Supported
+                    </h1>
+                    <p className='text-white mb-4'>
+                        Your device or browser does not fully support the 3D
+                        features of this website.
+                    </p>
+                    <p className='text-white mb-2'>
+                        <strong>For Android users:</strong> Please try opening
+                        this website in Chrome or Firefox.
+                    </p>
+                    <p className='text-white mb-4'>
+                        <strong>For iPhone users:</strong> Please use Safari for
+                        the best experience.
+                    </p>
+                    <a
+                        href='/'
+                        className='inline-block mt-2 bg-red-500 text-white font-bold py-2 px-6 rounded hover:bg-red-600 transition-colors'
+                    >
+                        Try Again
+                    </a>
+                </div>
             </div>
         );
     }

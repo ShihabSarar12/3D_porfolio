@@ -30,26 +30,26 @@ const Scene = ({ uiHeight }: { uiHeight: number; pages: number }) => {
                 />
                 {window.innerWidth < 600 ? null : (
                     <HerringSchool
-                        position={[0, sceneDivision?.[0], 1]}
+                        position={[0, sceneDivision?.[0] + 0.5, 1]}
                         scale={[1.5, 1.5, 1.5]}
                     />
                 )}
                 {window.innerWidth < 600 ? null : (
                     <FishSchool
-                        position={[0, sceneDivision?.[1], -0.5]}
+                        position={[0, sceneDivision?.[1] + 1.5, -0.5]}
                         rotation={[0, Math.PI / 2, 0]}
                     />
                 )}
                 {window.innerWidth < 600 ? null : (
                     <Shark
-                        position={[0, sceneDivision?.[2], 0]}
+                        position={[0, sceneDivision?.[2] + 4, 0]}
                         rotation={[-Math.PI / 6, 0, 0]}
                         scale={[2, 2, 2]}
                     />
                 )}
                 {window.innerWidth < 600 ? null : (
                     <Diver
-                        position={[0, sceneDivision?.[3], -0]}
+                        position={[0, sceneDivision?.[3] - 1, -0]}
                         scale={[0.25, 0.25, 0.25]}
                     />
                 )}

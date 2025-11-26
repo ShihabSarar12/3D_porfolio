@@ -37,7 +37,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <motion.nav className='fixed w-full z-50 text-white backdrop-blur-2xl'>
+        <motion.nav className='fixed w-full z-50 text-white backdrop-blur-lg'>
             <div className='max-w-7xl mx-auto px-6 lg:px-12'>
                 <div className='flex justify-between items-center h-20 text-white'>
                     <motion.button

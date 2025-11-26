@@ -101,7 +101,7 @@ const ResearchPaper = ({
                     scale: 1.02,
                     transition: { duration: 0.2, ease: 'easeOut' },
                 }}
-                className='p-8 rounded-2xl border border-white/0 backdrop-blur-0 shadow-lg text-white transition-all cursor-pointer'
+                className='p-8 rounded-2xl border hover:border-white/20 border-white/10 backdrop-blur-0 shadow-lg text-white transition-all cursor-pointer'
             >
                 <div className='flex items-start gap-4 mb-6'>
                     <div
@@ -117,10 +117,12 @@ const ResearchPaper = ({
                                     {paper.type}
                                 </span>
 
-                                <span className='inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white/10 border border-yellow-500/20 text-white'>
-                                    <Award className='w-3 h-3' />
-                                    <span>Rank: {paper.rank}</span>
-                                </span>
+                                {paper.rank && (
+                                    <span className='inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white/10 border border-yellow-500/20 text-white'>
+                                        <Award className='w-3 h-3' />
+                                        <span>Rank: {paper.rank}</span>
+                                    </span>
+                                )}
 
                                 {paper.impactFactor && (
                                     <span className='inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white/10 border border-green-500/20 text-white'>
@@ -144,9 +146,9 @@ const ResearchPaper = ({
                             </p>
                         </div>
 
-                        <p className='italic text-white/70 mb-2'>
-                            {paper.venue}
-                        </p>
+                        <span className='italic text-white/70 mb-2'>
+                            {paper.venue + ' - ' + paper.platform}
+                        </span>
                     </div>
                 </div>
 

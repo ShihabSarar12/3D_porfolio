@@ -79,7 +79,7 @@ const ResearchCard = ({ paper }: { paper: any }) => {
         html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
         html = html.replace(
             /!\[(.*?)\]\((.*?)\)/g,
-            '<img src="$2" alt="$1" class="block rounded-lg my-4 lg:w-2/3 sm:w-full max-h-[50rem]" />'
+            '<span class="flex flex-col justify-center items-center"><img src="$2" alt="$1" class="block rounded-lg my-4 lg:w-2/3 sm:w-full max-h-[50rem]" /></br><h1 class="font-bold text-lg">$1</h1></span>'
         );
         html = html.replace(/\n/g, '<br />');
 

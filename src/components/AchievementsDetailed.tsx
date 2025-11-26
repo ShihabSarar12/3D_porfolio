@@ -91,7 +91,7 @@ const AchievementCard = ({
                     backdropFilter: 'blur(16px)',
                     transition: { duration: 0.2, ease: 'easeOut' },
                 }}
-                className='h-full p-6 p-8 rounded-2xl border border-white/0 backdrop-blur-0 shadow-lg text-white transition-all cursor-pointer'
+                className='h-full p-6 p-8 rounded-2xl backdrop-blur-0 shadow-lg text-white transition-all cursor-pointer border hover:border-white/20 border-white/10'
             >
                 <div className='relative z-10 flex flex-col h-full'>
                     <div className='flex items-start justify-between mb-4'>

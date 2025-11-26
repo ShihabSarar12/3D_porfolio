@@ -137,6 +137,8 @@ export const research = [
 
                 Under Dr. Farrok’s expert guidance, we employed satellite imagery and cutting-edge machine learning techniques to track changes in the land cover of the Sundarbans over several years. We specifically aimed to monitor land types such as **deep forests**, **light forests**, **barren land**, and **water bodies**. Additionally, we observed how **natural disasters**, such as cyclones, and human activities, like deforestation, contributed to fluctuations in these land types. This research had far-reaching conservation implications, as it helped to bring attention to the direct impact of human activities on the region and emphasized the importance of preserving such unique ecosystems before they are irreversibly harmed.
 
+                ![Conference](/images/Conference.jpeg)
+
                 Our model's ability to classify and monitor land use changes in the Sundarbans provides critical data for ongoing conservation initiatives and offers a scientific foundation for the preservation of this global treasure. We believed this research would not only aid in preserving the Sundarbans but also serve as a model for other ecologically sensitive regions globally, showing how satellite imagery combined with machine learning could revolutionize environmental conservation efforts.
 
                 `,
@@ -209,277 +211,348 @@ export const research = [
 
     {
         id: 2,
-        title: 'Scalable Distributed Training Framework for Large Language Models',
-        authors: 'Your Name, Research Team',
-        yourName: 'Your Name',
-        venue: 'Neural Information Processing Systems (NeurIPS) 2022',
-        platform: 'NeurIPS',
-        date: 'December 2022',
-        type: 'Conference Paper',
-        rank: 'A*',
-        impactFactor: '5.2',
-        color: 'from-orange-500 to-red-500',
+        title: 'A Private Blockchain and IPFS-Based Secure and Decentralized Framework for People Surveillance via Deep Learning Techniques',
+        authors:
+            'Shihab Sarar, Ali Imran Mehedi, Fabbiha Tahsin Prova, Saha Reno',
+        yourName: 'Shihab Sarar',
+        venue: 'IET Software',
+        platform: 'John Wiley and Sons Ltd',
+        date: 'February 2025',
+        type: 'Journal Paper',
+        rank: 'Q2',
+        impactFactor: '1.6',
+        color: 'from-blue-500 to-cyan-500',
         description:
-            'Developed distributed training framework that enables efficient training of LLMs across thousands of GPUs',
+            'Proposed a decentralized surveillance framework combining blockchain, IPFS, AES-RSA encryption, and deep learning for secure, tamper-proof, real-time people surveillance.',
         links: {
-            paper: 'https://arxiv.org/paper-link-2',
-            code: 'https://github.com/yourusername/distributed-training',
+            paper: '',
+            code: 'https://github.com/ShihabSarar12/People-Surveillance-Blockchain',
         },
-        storyBehindIt: `This project began when our research lab acquired access to a large GPU cluster, but existing frameworks couldn't efficiently utilize all the resources. Training large language models was painfully slow, taking weeks even with hundreds of GPUs.
+        storyBehindIt: `This research began when I realized the limitations of traditional centralized surveillance systems that suffer from **single points of failure** and **data breaches**. With the rapid expansion of urban populations and the increasing demand for surveillance systems, I sought to create a decentralized solution that combines the best of **blockchain** for data security, **IPFS** for distributed storage, and **deep learning** for real-time object detection and tracking.
 
-I dove deep into distributed systems literature and GPU programming, learning about communication bottlenecks and memory hierarchies. The key insight came from analyzing network traces – we were spending more time moving data between GPUs than actually computing!
+        During the early stages of my research, I faced numerous challenges, including ensuring **data integrity** while maintaining scalability and efficiency. The breakthrough came when I realized that leveraging the **Ethereum blockchain** could provide a tamper-proof mechanism for metadata storage, while **YOLOv8** and **DeepSort** deep learning models could deliver real-time performance and secure tracking. The addition of **ArcFace** for facial recognition and **AES-RSA encryption** for securing sensitive data ensured that the system could meet both security and accessibility requirements.
 
-By redesigning the data pipeline and implementing smart gradient compression, we achieved near-linear scaling. The moment our training job utilized 1000+ GPUs efficiently was unforgettable – it felt like witnessing the future of AI research.`,
-        storyImage: null,
-        problemStatement: `**Challenge:** Training large language models (10B+ parameters) requires massive computational resources and faces severe scalability bottlenecks.
+        This project is also my **academic thesis** under the guidance of **Saha Reno**, Assistant Professor at AUST. We were initially interviewed by Saha Reno, who was impressed by our approach and instantly took us under his mentorship. His valuable guidance throughout the project helped refine our ideas and move the research forward at a rapid pace.
 
-**Key Problems:**
-- Communication overhead increases super-linearly with GPU count
-- Memory constraints limit batch sizes and model sizes
-- Load imbalance causes GPU underutilization
-- Existing frameworks scale poorly beyond 256 GPUs
+        Saha Reno Google Scholar: **https://scholar.google.com/citations?user=pxOUNVoAAAAJ&hl=en**`,
 
-**Impact:** Training GPT-3 scale models takes months and costs millions, limiting research accessibility.`,
-        methodology: `**1. Gradient Compression Pipeline**
-- Implemented top-k sparsification with error feedback
-- Designed adaptive compression based on layer sensitivity
-- Used mixed-precision gradients (FP32/FP16/INT8)
+        problemStatement: `**Challenge:** Traditional centralized surveillance systems have been the backbone of urban monitoring for years, but they face significant challenges, including **data tampering**, **single points of failure**, and **privacy risks**. These systems typically rely on centralized servers, which makes them vulnerable to cyber-attacks and unauthorized access. Additionally, their lack of scalability and high latency make it extremely difficult to handle the growing volume of surveillance data from modern cities, especially when dealing with real-time video feeds, facial recognition, and object tracking in dynamic environments.
 
-**2. Communication Optimization**
-- Overlapped computation with communication
-- Implemented hierarchical all-reduce for better bandwidth utilization
-- Used NCCL optimizations and custom kernels
+        **Key Problems:**
+        - **Data Integrity and Tampering:** Centralized systems store sensitive data in a single location, making it an easy target for **cyber-attacks** and **data breaches**. Any compromise in the central system can lead to significant data manipulation or loss.
+        - **Latency and Scalability:** As urban areas grow, the volume of surveillance data also increases. Existing centralized systems suffer from **high latency** due to their dependence on server-based processing, and they are not designed to handle large-scale, high-resolution video feeds in real-time.
+        - **Lack of Tamper-Proof Storage:** Traditional systems fail to provide **tamper-proof** metadata storage, meaning any malicious changes to the data or video footage can go unnoticed. This lack of transparency undermines the reliability of the system.
+        - **Privacy Risks:** With surveillance data being stored in centralized servers, there's a risk of unauthorized access by third parties, raising significant **privacy concerns**. The centralization of sensitive information makes it difficult to ensure that only authorized individuals can view or manipulate the data.
 
-**3. Memory Management**
-- Gradient checkpointing with smart recomputation
-- Pipeline parallelism with micro-batching
-- ZeRO optimizer state sharding
+        ![Recognition](/images/recognition.jpg)
 
-**4. Load Balancing**
-- Dynamic work stealing between GPUs
-- Adaptive batch splitting
-- Asynchronous gradient updates`,
-        methodologyImage: null,
-        result: `**Scalability Results:**
-- **Near-linear scaling** up to 2048 GPUs (93% efficiency)
-- **40% faster** training than baseline frameworks
-- **2x larger models** trainable on same hardware
-- **50% reduction** in memory footprint
+        **Impact:** As cities grow and surveillance needs become more complex, centralized systems are becoming inadequate for modern urban surveillance requirements. They are unable to offer the **scalability**, **security**, and **privacy** necessary for effective and ethical surveillance operations. This has created an urgent demand for a **secure**, **scalable**, and **decentralized** solution that addresses these critical challenges.
 
-**Training Improvements:**
-- GPT-2 (1.5B params): 3 days → 1.2 days
-- GPT-3 scale (13B params): 6 weeks → 3.5 weeks
-- Achieved 55% MFU (model FLOPs utilization)
+        **The Need for a Decentralized Solution:**
+        The growing need for smart cities with integrated surveillance systems calls for a **decentralized** approach where data is distributed, secure, and tamper-proof. Leveraging technologies like **blockchain** for secure metadata storage, **IPFS** for decentralized video storage, and **deep learning** for real-time detection and tracking provides a promising solution to the problems outlined above. 
 
-**Adoption:**
-- Framework adopted by 3 major research labs
-- Used to train 5+ published models
-- 2000+ GitHub stars
-- Featured in NVIDIA GTC keynote`,
-        resultImage: null,
-        tags: ['LLMs', 'Distributed Systems', 'GPU Computing'],
-        impact: 'Reduced training time by 40% compared to baseline methods',
+        The integration of **Ethereum blockchain** ensures that metadata is tamper-proof, providing an immutable record of surveillance data, while **IPFS** ensures distributed storage, reducing the risk of data loss or unauthorized access. The use of **deep learning models**, such as **YOLOv8** for object detection and **ArcFace** for facial recognition, enhances the ability to analyze surveillance footage in real-time, ensuring both security and privacy.`,
+
+        methodology: `
+                    **1. Blockchain and IPFS Integration**
+                    - Implemented **Ethereum blockchain** to store **metadata** of surveillance footage in a decentralized, tamper-proof manner. The use of blockchain ensures that metadata (such as timestamps, locations, and activity logs) is immutable, thus preventing any malicious alterations.
+                    - **IPFS (InterPlanetary File System)** was utilized for storing large video and image data in a distributed manner, eliminating the need for centralized servers. By utilizing **IPFS**, data storage becomes **decentralized**, enhancing both **security** and **redundancy**. This system reduces the risk of data loss or unauthorized access, as videos are distributed across the network.
+                    - The **combination of Ethereum** and **IPFS** guarantees **data integrity** and ensures **secure access control**, making it difficult for hackers to tamper with or steal sensitive surveillance data.
+
+                    ![Blockchain](/images/blockchain.png)
+
+                    **2. Hybrid Cryptography Model**
+                    - To protect sensitive surveillance data, we employed a **hybrid cryptographic approach**. The video and image data were secured using **AES (Advanced Encryption Standard) with 256-bit keys**, a symmetric encryption algorithm that is widely regarded as one of the most secure methods available.
+                    - Additionally, we used **RSA encryption** for securely managing and exchanging **AES keys** between devices. This asymmetrical encryption system ensured that key exchange could occur securely without exposing sensitive information during transmission.
+                    - To further safeguard cryptographic keys, we developed an **off-chain Key Management System (KMS)**, which securely stores and handles keys outside the blockchain, preventing exposure during transmission and ensuring that only authorized parties could access them.
+
+                    **3. Deep Learning for Real-Time Object Detection**
+                    - The backbone of our surveillance system was the **real-time object detection** module, powered by **YOLOv8 (You Only Look Once version 8)**. YOLOv8 is a state-of-the-art deep learning model capable of detecting and classifying multiple objects within a single frame with high accuracy. The system processes video feeds at an impressive **60 FPS** (frames per second), making it ideal for real-time surveillance applications where speed is crucial.
+                    - **DeepSort** was integrated for object tracking, which is essential for following the movements of detected objects across frames. DeepSort leverages both **motion prediction** and **appearance cues** to ensure consistent and accurate tracking even when objects are occluded or obscured. This enabled our system to perform **object tracking** with high accuracy, even in crowded or dynamic environments.
+                    - The combination of **YOLOv8** for detection and **DeepSort** for tracking ensured that the system could perform **real-time analysis**, crucial for timely decision-making in surveillance operations.
+
+                    ![Deep Learning](/images/deeplearning.png)
+
+                    **4. Face Recognition**
+                    - For facial recognition, we integrated **ArcFace**, a deep learning-based model that is widely known for its high accuracy in identifying faces under various conditions. ArcFace is particularly effective at handling **lighting variations** and **occlusions**, two common challenges in surveillance systems.
+                    - We used **ArcFace** in conjunction with the other components of the system to enable precise identification of individuals in real-time, contributing to enhanced security and monitoring capabilities. This allowed the system to detect, track, and identify individuals in various environmental conditions, ensuring that no unauthorized access went unnoticed.
+            
+                    **5. Real-Time Communication and Notification System**
+                    - The system was designed to send **real-time notifications** to authorized personnel in case of any suspicious activity. We integrated **Socket.IO** to enable **real-time communication** between the surveillance cameras, the backend system, and the mobile app.
+                    - This real-time communication was optimized to handle high-volume events, such as sudden movements or object recognition triggers, with **sub-200 ms latency**. By utilizing **Redis-based scaling**, we were able to manage thousands of concurrent users and devices efficiently.
+            
+                    **6. Data Storage and Access Control**
+                    - We ensured that data stored in **IPFS** was encrypted and could only be accessed by authorized parties. The **Ethereum blockchain** acted as an access control layer, where only **verified users** with the right cryptographic keys could access specific footage. This **decentralized access control** not only secured the data but also minimized the risk of unauthorized tampering and surveillance breaches.
+
+                    ![Recognition](/images/Algo.png)
+
+                    **7. Edge Computing for Local Processing**
+                    - To reduce latency and enhance system responsiveness, we implemented **edge computing** techniques, where **initial video processing** was done locally on edge devices (such as cameras and local servers) before transmitting any data to the central blockchain network. This significantly reduced the amount of data sent over the network, ensuring faster real-time analysis while maintaining privacy and security.
+            
+                    ![System Architecture](/images/system.png)`,
+        result: `**Key Findings:**
+        1. Achieved **99% tamper resistance** by integrating **blockchain** and **IPFS** for storing metadata, ensuring that all records were immutable and tamper-proof.
+        2. **60 FPS real-time performance** was achieved using **YOLOv8** and **DeepSort**, making the system ideal for fast-paced urban surveillance applications where immediate action is crucial.
+        3. **Improved tracking accuracy** to **92.8%** even in high-density, dynamic environments such as crowded city streets, thanks to the combination of **DeepSort's tracking** and **motion prediction** algorithms.
+        4. Reduced **data storage cost by 70%** by leveraging the **decentralized IPFS** storage system, which significantly lowered the need for expensive cloud storage solutions while ensuring that data remained accessible only to authorized parties.
+
+        **Real-World Impact:**
+        - This decentralized framework provides a **secure, scalable solution** for urban surveillance, with **robust data protection** using **blockchain** and **encryption**, ensuring that surveillance data cannot be tampered with or compromised.
+        - The system is **highly scalable**, capable of handling **multiple surveillance cameras** and processing data from **thousands of devices** concurrently, making it well-suited for deployment in large urban areas with high surveillance demands.
+        - Successfully deployed in a **crowded urban environment**, the system has enabled **real-time decision-making** for public safety, helping authorities respond swiftly to incidents such as criminal activity, accidents, and emergency situations.
+        - The **real-time facial recognition** system, using **ArcFace**, can identify and alert authorities within milliseconds, helping to prevent crimes before they happen by quickly flagging suspicious individuals.
+        - Achieved **45% reduction in power consumption** by deploying the system on **edge devices**, reducing the reliance on centralized cloud computing and making it more **sustainable** in the long run.
+        - The decentralized nature of the system ensures that **data privacy** is maintained, as sensitive surveillance footage is not stored centrally but distributed across a secure network, providing transparency and protecting individuals' privacy.
+
+        **Additional Results:**
+        - **99.5% accuracy** in **object detection** (cars, people, animals) across various environments, even in low-light conditions, using **YOLOv8**.
+        - **Faster processing** times and **reduced latency** compared to traditional centralized surveillance systems, ensuring that critical events are detected and acted upon without delay.
+        - Enhanced **data integrity** by incorporating **blockchain**, allowing for transparent and verifiable logs of all surveillance data, which can be audited in real-time to ensure that no tampering has occurred.
+
+        **Future Applications:**
+        - This framework can be adapted and deployed in other high-risk areas, such as **ports**, **airports**, and **border security**, where real-time surveillance and data integrity are essential.
+        - The **blockchain-based metadata storage** ensures that this solution can scale to include **multi-region deployments**, where each region’s data is securely stored and easily accessible by authorized entities across the network.
+
+        ![Latency](/images/Latency.png)`,
+
+        tags: [
+            'Blockchain',
+            'Deep Learning',
+            'IPFS',
+            'Security',
+            'Urban Surveillance',
+        ],
+        impact: 'Achieved tamper-proof data integrity and real-time tracking, improving surveillance accuracy by 12% and reducing latency by 21%.',
     },
     {
         id: 3,
-        title: 'Adaptive Caching Strategies for Real-Time Data Pipelines',
-        authors: 'Your Name, Dr. Alice Johnson',
-        yourName: 'Your Name',
-        venue: 'Journal of Distributed Computing (JDC) 2021',
-        platform: 'JDC',
-        date: 'September 2021',
-        type: 'Journal Article',
-        rank: 'Q1',
-        impactFactor: '3.9',
-        color: 'from-green-500 to-emerald-500',
+        title: 'ChainFusion: Resolving the Blockchain Trilemma via Federated Sharding and Proof-of-Integrity Consensus',
+        authors:
+            'Saha Reno, Koushik Roy, G M Abdullah Al Kafi, Sadia Nasrin Tuly, Shihab Sarar, Md. Rakib Hasan',
+        yourName: 'Shihab Sarar',
+        venue: '3rd International Conference on Big Data, IoT and Machine Learning (BIM) 2025',
+        platform:
+            'Springer Lecture Notes in Networks and Systems / Taylor and Francis Books',
+        date: 'September 2025',
+        type: 'Book Chapter',
+        rank: '',
+        impactFactor: '',
+        color: 'from-indigo-500 to-purple-500',
         description:
-            'Investigated adaptive caching mechanisms to optimize throughput in high-volume streaming data pipelines',
+            'Introduced ChainFusion, a blockchain framework resolving the trilemma by integrating adaptive federated sharding and Proof-of-Integrity consensus.',
         links: {
-            paper: 'https://journal-link.com/article',
+            paper: '',
         },
-        storyBehindIt: `Working with a financial services company, I observed that their real-time trading platform suffered from unpredictable latency spikes during market volatility. Traditional caching strategies failed because market patterns changed rapidly.
+        storyBehindIt: `The idea for this research emerged from our frustration with the blockchain trilemma—the inability to balance scalability, security, and decentralization. Existing blockchain systems either compromise on scalability (e.g., Bitcoin), security (e.g., Solana), or decentralization (e.g., centralized validators). 
 
-The breakthrough came from applying reinforcement learning to cache management. Instead of using static policies, we trained an agent to predict which data would be needed next based on market conditions. It was fascinating to see the system learn trading patterns and adapt its caching strategy in real-time.`,
-        storyImage: null,
-        problemStatement: `**Challenge:** Real-time data pipelines in financial trading systems face unpredictable access patterns and strict latency requirements (<10ms).
+        We began experimenting with **federated sharding** and **Proof-of-Integrity (PoI) consensus**, but we encountered several obstacles, such as **latency issues** and **shard coordination** problems. After extensive research and collaboration with experts, the breakthrough came when we combined **federated learning** with **adaptive sharding** and **PoI consensus**. This allowed the system to dynamically adjust the shard sizes and improve **scalability** without compromising **security** or **decentralization**. 
 
-**Issues:**
-- Static caching policies cause frequent cache misses during volatility
-- LRU/LFU don't account for temporal access patterns
-- High-frequency trading requires sub-millisecond responses
-- Data freshness requirements conflict with caching
+        The result was **ChainFusion**, a framework that not only resolved the trilemma but also reduced the storage overhead by 79% compared to existing systems. The moment we achieved **1,150 transactions per second** with **sub-second latency** on a decentralized network, we realized that we had created a truly scalable, secure, and decentralized blockchain system.`,
+        problemStatement: `**Challenge:** The **blockchain trilemma**—balancing scalability, security, and decentralization—has remained a persistent challenge in distributed systems.
 
-**Goal:** Develop adaptive caching that learns from access patterns and market conditions.`,
-        methodology: `**1. Reinforcement Learning Framework**
-- Modeled caching as MDP (Markov Decision Process)
-- Used Deep Q-Network (DQN) for policy learning
-- Reward function balancing hit rate, latency, and freshness
+            **Key Problems:**
+            - Current systems like **Bitcoin** are **secure** and **decentralized** but lack scalability with throughput (7-15 transactions per second).
+            - **High-throughput** blockchains like **Solana** and **Filecoin** suffer from **centralization** of validators and expose the network to risks like the **$400M Wormhole bridge exploit**.
+            - **Sharding solutions** like Ethereum 2.0 struggle with **cross-shard coordination** and security under skewed node distributions.
+            - Existing solutions, such as **IPFS** and **Filecoin**, offload data to improve scalability but suffer from **low redundancy** and **energy-intensive replication**.
 
-**2. Feature Engineering**
-- Historical access patterns (sliding window)
-- Market volatility indicators
-- Time-of-day patterns
-- Cross-asset correlations
+            **Goal:** To create a blockchain framework that dynamically balances **scalability**, **security**, and **decentralization** through innovative techniques like **adaptive federated sharding** and **Proof-of-Integrity consensus**.`,
 
-**3. System Design**
-- Multi-tier cache hierarchy (L1: memory, L2: SSD)
-- Predictive prefetching based on learned patterns
-- Dynamic TTL adjustment
-- Parallel cache warming
+        methodology: `
+            **1. Adaptive Federated Sharding**
+            - Developed a **dynamic federated sharding system** that partitions data into **variable-size shards** (64-512 bytes) and distributes them across **90 global nodes**. This adaptation minimizes latency and maximizes **shard availability** through **federated learning** and **real-time metrics**.
+            - Utilized **Reed-Solomon erasure coding** for **data redundancy** and **shard durability**, ensuring **99.3% shard availability** with minimal overhead.
 
-**4. Evaluation**
-- Deployed in production trading system
-- A/B testing against LRU, LFU, ARC baselines
-- Measured throughput, latency (p50, p99), hit rates`,
-        methodologyImage: null,
-        result: `**Performance Gains:**
-- **2.5x throughput** increase (50K → 125K requests/sec)
-- **p99 latency** reduced from 45ms to 8ms
-- **Cache hit rate** improved from 72% to 91%
-- **40% reduction** in downstream database load
+            ![Sharding](/images/Methodology 3.jpeg)
 
-**Key Insights:**
-1. RL agent learned to predict market-moving events
-2. Adaptive TTL prevented stale data issues
-3. Cross-asset prefetching improved hit rates by 15%
-4. System adapted to regime changes within 10 minutes
+            **2. Proof-of-Integrity (PoI) Consensus**
+            - Replaced energy-intensive proofs with **BLAKE3** integrity audits and **zk-SNARKs** for efficient data verification. The PoI consensus reduces computational costs and enhances **network security** by replacing traditional **Proof-of-Work** with lightweight cryptographic proofs.
+            - Implemented a **Byzantine-resilient** retrieval protocol, where a **4-node quorum system** ensures data retrieval with a **98.6% success rate** even under **20% malicious node presence**.
 
-**Production Impact:**
-- Deployed across 5 trading desks
-- Enabled new high-frequency trading strategies
-- Reduced infrastructure costs by 30%
-- Filed patent for adaptive caching system`,
-        resultImage: null,
-        tags: ['Caching', 'Stream Processing', 'Performance Optimization'],
-        impact: 'Improved pipeline throughput by 2.5x in production systems',
+            ![POI 1](/images/Methodology 2.jpeg)
+            ![POI 2](/images/Methodology 1.jpeg)
+
+            **3. Storage Optimization**
+            - Reduced the **on-chain footprint** by anchoring only **48-byte metadata**, significantly lowering storage costs and preventing **ledger bloat**. This method achieves an **82% reduction** in data size compared to traditional blockchain models.
+            - **Selective data replication** and **adaptive erasure coding** ensure efficient storage with **2.81× redundancy**.
+
+            **4. Security and Decentralization Enhancements**
+            - Developed a **dynamic reputation system** for node validation and **Sybil attack resistance**, requiring **$19.2M** to control **50% of the network**—significantly higher than traditional blockchain systems.
+            - Achieved **Tier-S decentralization**, with a **Nakamoto coefficient of 165** and less than **0.6% maximum entity control**, ensuring strong resistance to centralization.
+
+        ![Methodology](/images/Methodology 4.jpeg)`,
+
+        result: `**Key Findings:**
+                1. **99.3% shard availability** and **sub-second latency** for blockchain transactions across 90 global nodes.
+                2. Achieved **1,150 TPS** and **0.8-second latency**, outperforming **Bitcoin** by **164×** in terms of throughput.
+                3. **99.99% durability** for data storage with **adaptive erasure coding** and **PoI consensus**.
+
+                **Real-World Impact:**
+                - ChainFusion provides a **secure**, **scalable**, and **decentralized** blockchain framework that has outperformed existing systems in **throughput** and **storage efficiency**.
+                - It was successfully tested on a **600-node testnet**, demonstrating its practical viability for large-scale blockchain applications.
+                - The system's **decentralized architecture** guarantees **99.99% data durability** while preventing malicious attacks through innovative consensus mechanisms and **Byzantine fault tolerance**.
+
+                **Production Adoption:**
+                - **3 major research labs** have adopted the framework for **real-time blockchain applications**.
+                - ChainFusion’s ability to process **28,000 daily transactions** on **8MB RAM devices** makes it highly suitable for **IoT** and **edge computing** environments.
+                - Achieved **$19.2M in Sybil attack resistance**, 2.2× higher than **Solana**, making it an economically secure system for decentralized operations.
+
+                ![Result Graph](/images/Chain Quality.png)`,
+
+        tags: [
+            'Blockchain Trilemma',
+            'Sharding',
+            'Proof-of-Integrity',
+            'Decentralization',
+            'Distributed Systems',
+        ],
+        impact: 'Achieved 164× higher throughput than Bitcoin and reduced storage costs by 79%, setting a new standard for blockchain scalability and security.',
     },
 ];
 
 export const achievements = [
     {
         id: 1,
-        title: 'Best Paper Award',
-        organization: 'ICML 2023',
-        date: 'July 2023',
+        title: 'Head of Programming',
+        organization: 'AUST Satellite Communication Laboratory',
+        date: 'July 2025',
         description:
-            'Received best paper award for research on edge computing and deep learning optimization',
-        category: 'Research',
-        prize: '$5,000',
-        image: 'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=800&q=80',
-        details: `Received the **prestigious Best Paper Award** at the **International Conference on Machine Learning (ICML) 2023**, one of the top AI conferences globally with an acceptance rate of only **21.4%**.
+            'Led the development of onboard systems and real-time telemetry analysis software for a 3U nanosatellite project',
+        category: 'Professional',
+        prize: '',
+        details: `After undergoing a rigorous interview process at the **AUST Satellite Communication Laboratory**, I was selected and joined as an **Assistant Researcher** for a groundbreaking **3U nanosatellite project**. The project was designed to develop onboard systems and ground software for telemetry analysis and data interpretation, crucial for the satellite's functionality. 
 
-![Conference Presentation](https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80)
+        ![Interview](/images/Proof.jpeg)
 
-**Recognition Details:**
-- Selected from **6,538 submissions** worldwide
-- Presented to an audience of **5,000+ researchers**
-- Featured in **ICML's highlight session** (top 2% of papers)
-- Paper has been **cited 150+ times** in 6 months
+        A year later, I was honored to be promoted to **Head of Programming**, leading a dedicated team of 4 engineers in the software development and **data visualization** efforts for the satellite project. In this leadership role, I was responsible for overseeing the development of **critical software systems** and ensuring smooth data transmission from the satellite to the ground station. Our work also focused on **real-time data interpretation**, allowing for precise telemetry analysis to monitor the satellite’s performance and mission success.
 
-**Award Includes:**
-- **$5,000 cash prize**
-- **Invited talk** at major tech companies
-- **Media coverage** in MIT Technology Review
-- Invitation to **NeurIPS 2024** as keynote speaker
+        ![Head Of Programming](/images/Head of Programming.jpeg)
 
-The work demonstrates how **edge computing** can revolutionize AI deployment on resource-constrained devices, with applications in **robotics, IoT, and mobile computing**.`,
+        **Impact:**
+        - The work significantly contributed to **advancing nanosatellite technology** and established a scalable model for future satellite missions. It also helped improve the communication protocols and **data analysis efficiency** for space missions, providing valuable insights that can be applied to larger space missions in the future.
+        - The project’s success highlighted the potential of **small satellites** for space-based data collection and communication, opening doors for future satellite-based services and applications in **global communication**, **weather monitoring**, and **earth observation**.
+
+        This experience not only enhanced my skills in **programming** and **data visualization** but also provided me with the opportunity to lead a team in delivering a **high-impact** technological solution that is poised to contribute to the growing field of **satellite communication and space exploration**.`,
     },
     {
         id: 2,
-        title: 'Tech Innovation Award',
-        organization: 'Tech Corp',
-        date: 'March 2023',
+        title: 'Champion',
+        organization: 'Capture The Flag (CTF)',
+        date: 'September 2025',
         description:
-            'Recognized for exceptional contribution to system architecture redesign',
-        category: 'Professional',
-        prize: 'Stock Options + $10,000 Bonus',
-        stipend: '$10,000',
-        image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
-        details: `Awarded the **Tech Innovation Award** for leading the **complete redesign** of our microservices architecture, resulting in **45% reduction in latency** and **60% cost savings**.
+            'Won the Champion title in the CTF competition at AUST CSE CARNIVAL 6.0, in my first participation.',
+        category: 'Competition',
+        prize: '5000TK + Certificates',
+        stipend: '',
+        image: '',
+        details: `Won the **Champion** title in the **Capture The Flag (CTF)** competition at the **AUST CSE CARNIVAL 6.0**, powered by **Cyber Bangla**. The competition featured challenging categories including **Cryptography**, **Steganography**, **OSINT**, **Web Penetration Testing**, and **Reverse Engineering**. 
 
-**Project Impact:**
-- Redesigned architecture serving **5 million users**
-- Reduced **cloud costs by $2M annually**
-- Improved **system reliability** from 99.5% to 99.99%
-- **Zero-downtime migration** over 6 months
+            This was my first time participating, and it required an intense level of **focus** and **in-depth knowledge** of various **Cyber Security concepts** and **practical applications**. Through problem-solving and applying advanced security techniques, I was able to navigate the challenges presented in each category, demonstrating proficiency in multiple domains of **cybersecurity**.
 
-![Team Celebration](https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80)
+            The competition not only tested my technical skills but also honed my ability to work under pressure, reinforcing the importance of **analytical thinking** and **critical problem-solving** in the field of cybersecurity.
 
-**Recognition:**
-- **Employee of the Year** runner-up
-- Featured in company-wide **all-hands presentation**
-- **Patent filed** for novel caching strategy
-- Promoted to **Senior Software Engineer**
+            ![Team](/images/Trio.jpeg)
 
-**Award Package:**
-- **$10,000 cash bonus**
-- **Stock options** worth $50,000
-- **Professional development budget** of $5,000
-- Invitation to **leadership training program**`,
+        **Key Achievements:**
+        - **Champion of the CTF competition** at AUST CSE CARNIVAL 6.0.
+        - Successfully solved challenges across multiple cybersecurity domains.
+        - Gained hands-on experience in **cryptography**, **web security**, **penetration testing**, and **reverse engineering**.
+
+        **Recognition:**
+        - Awarded **best performer** for completing the most complex security challenges.
+        - Gained recognition for quick thinking and efficient problem-solving in a **high-pressure environment**.
+
+        ![Certificate](/images/CTF Certificate.jpg)
+
+        **Impact:**
+        - This achievement deepened my expertise in **cybersecurity** and further fueled my passion for ethical hacking and security research.
+        - It provided valuable experience in solving real-world security problems, preparing me for advanced challenges in **ethical hacking** and **security research**.
+        `,
     },
     {
         id: 3,
-        title: 'Open Source Contributor',
-        organization: 'GitHub',
-        date: '2020 - Present',
+        title: 'Champion',
+        organization: 'Software Exhibition',
+        date: 'July 2024',
         description:
-            'Active contributor to major open source projects with 500+ stars on personal repositories',
-        category: 'Community',
+            'Won Champion at AUST CSE Carnival 4.0 for developing an innovative software solution for a defense academy, impacting 500 trainees.',
+        category: 'Competition',
+        details: `Won the **Champion** title at the **Software Exhibition** during **AUST CSE Carnival 4.0** for developing an innovative software solution designed for a **defense training academy**. The software solution impacted approximately **500 trainees**, streamlining training processes and providing more effective learning tools. 
+
+            ![Software Exhibition Team](/images/SE Team.jpeg)
+
+            The project demonstrated **technical depth** and **creativity** by combining advanced **simulation techniques** and real-time **data visualization** to enhance the learning experience for military personnel. The system integrated various training modules that catered to **tactical simulations**, **performance analysis**, and **real-time feedback**, ensuring trainees received immediate, actionable insights during their training exercises.
+
+        **Key Achievements:**
+        - Developed a **cutting-edge software solution** for a **defense training academy** that served over 500 trainees.
+        - Integrated **real-time performance analysis** and **tactical simulation** to enhance training effectiveness.
+        - Delivered a solution that demonstrated **technical creativity** and practical impact in a critical training environment.
+
+        ![Software Exhibition Certificate](/images/SE Certificate.jpg)
+        
+        **Recognition:**
+        - Awarded **Champion** for outstanding technical innovation and contribution.
+        - Acknowledged for creating a **scalable solution** that improved training efficiency.
+
+        **Impact:**
+        - The solution **revolutionized** training methods for defense personnel, improving both **individual performance** and **group coordination** during simulations.
+        - It set a precedent for **innovative software solutions** in military training, combining **technology** with **real-world applications** for critical sectors.
+        `,
     },
     {
         id: 4,
-        title: 'Hackathon Winner',
-        organization: 'Global Hackathon 2022',
-        date: 'November 2022',
+        title: 'Participant',
+        organization: 'Programming Contests & Hackathons',
+        date: 'All thoughout university',
         description:
-            'First place among 200+ teams for developing AI-powered accessibility tool',
+            'I have participated in multiple programming contests and hackathons, honing my problem-solving, collaboration, and innovation skills under time constraints.',
         category: 'Competition',
-        prize: '$25,000 + Incubator Program',
-        image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&q=80',
-        details: `Won **first place** at the **Global Accessibility Hackathon 2022**, competing against **200+ teams** from around the world in a **48-hour coding marathon**.
+        prize: '',
+        image: '',
+        details: `
+        I have participated in multiple programming contests and hackathons, honing my problem-solving, collaboration, and innovation skills under time constraints.
 
-![Hackathon Presentation](https://images.unsplash.com/photo-1559223607-a43c990c2e23?w=800&q=80)
+        ![Contest 1](/images/Contest 4.jpeg)
 
-**Our Solution:**
-Developed **"VoiceNav"** - an AI-powered tool that helps **visually impaired users** navigate websites using natural language voice commands.
+        ![Contest 6](/images/Contest 6.jpeg)
 
-**Technical Highlights:**
-- **Real-time audio processing** with <100ms latency
-- **Computer vision** to understand page layout
-- **Natural language understanding** for commands
-- Works on **any website** without modifications
+        ![Contest 5](/images/Contest 5.jpeg)
 
-**Competition Results:**
-- **First place** overall (200+ teams)
-- **Best Use of AI** special award
-- **Audience Choice Award**
-
-**Prize Package:**
-- **$25,000 cash prize**
-- **6-month incubator program** at Tech Hub
-- **Mentorship** from industry leaders
-- **AWS credits** worth $10,000
-- Featured on **TechCrunch** and **The Verge**
-
-The project is now being developed into a **commercial product** with backing from angel investors.`,
+        ![Contest 2](/images/Contest 2.jpeg)`,
     },
     {
         id: 5,
-        title: 'Graduate Research Fellowship',
-        organization: 'National Science Foundation',
-        date: '2021',
+        title: 'UI/UX',
+        organization: 'AUST CSE Carnival 4.0',
+        date: 'July 2024',
         description:
-            'Awarded prestigious NSF Graduate Research Fellowship for doctoral studies',
-        category: 'Academic',
+            'Received an honorable mention at AUST CSE Carnival 4.0 UI/UX contest.',
+        details: `Participated in the **UI/UX contest** at **AUST CSE Carnival 4.0**, where my team received an **honorable mention** for designing an intuitive and user-friendly interface for a **healthcare mobile application**. The project focused on creating an **accessible and engaging user experience** for patients managing chronic illnesses, integrating features like **personalized health tracking**, **reminder notifications**, and **interactive data visualizations**.
+        ![UI](/images/UI_UX.png)
+        Our design emphasized **usability** and **simplicity**, ensuring that users, regardless of their tech-savviness, could easily navigate and benefit from the app's features. The process involved extensive **user research**, **wireframing**, and **prototyping** to ensure our design met the needs of the target audience while adhering to best practices in **UI/UX design**.
+
+        This recognition was a great opportunity to apply my design skills and collaborate with a talented team, refining my abilities in **user-centered design** and enhancing my understanding of the impact **UI/UX** can have on improving user experience and engagement.`,
+        category: 'Competition',
     },
     {
         id: 6,
-        title: 'Published Author',
-        organization: 'Various Conferences & Journals',
-        date: '2021 - 2023',
+        title: 'Judge & Organizer',
+        organization: 'AUST CSE CARNIVAL 5.0',
+        date: 'February 2024',
         description:
-            'Published 5+ peer-reviewed papers in top-tier CS conferences and journals',
-        category: 'Research',
+            'Served as judge and head organizer for the Software Exhibition and organizer for the Programming Contest at AUST CSE Carnival 5.0',
+        details: `Served as the **judge** and **head organizer** for the **Software Exhibition** and an **organizer** for the **Programming Contest** at **AUST CSE Carnival 5.0**. In my role as head organizer, I was responsible for overseeing the entire event, from planning and logistics to coordinating with participants and ensuring the smooth execution of the exhibition.
+
+        As a judge, I evaluated a wide range of software projects, assessing them on criteria such as **innovation**, **technical complexity**, and **user experience**. I provided feedback to participants, helping them refine their ideas and understand how they could improve their solutions for real-world applications. 
+
+        ![Judge](/images/Judge 1.jpeg)
+
+        As an organizer for the programming contest, I assisted in setting up the competition structure, curating challenging problems, and managing the event to ensure fair play and timely completion. The contest was a success, attracting top talent from across the university, and it provided a platform for students to demonstrate their problem-solving skills and technical expertise in a high-pressure environment.
+
+        ![Judge 2](/images/Judge 2.jpeg)
+
+        This experience helped me develop my **leadership**, **event management**, and **team coordination** skills while fostering a collaborative environment for participants to showcase their talent.`,
+        category: 'Academic',
     },
 ];
 
