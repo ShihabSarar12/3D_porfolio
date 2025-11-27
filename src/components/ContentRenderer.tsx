@@ -48,17 +48,15 @@ const ContentRenderer = ({ content }: ContentRendererProps) => {
             {parts.map((part, index) => {
                 if (part.type === 'image') {
                     return (
-                        <div
-                            key={index}
-                            className='rounded-lg overflow-hidden my-4'
-                        >
+                        <span className='flex flex-col justify-center items-center'>
                             <img
                                 src={part.content}
-                                alt={part.alt || 'Content image'}
+                                alt={part.alt}
                                 className='block rounded-lg my-4 lg:w-2/3 sm:w-full max-h-[50rem]'
-                                loading='lazy'
                             />
-                        </div>
+                            <br />
+                            <h1 className='font-bold text-lg'>{part.alt}</h1>
+                        </span>
                     );
                 } else {
                     return <FormattedText key={index} text={part.content} />;

@@ -34,7 +34,7 @@ const ProjectDetails = ({ id }: { id?: number }) => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.6 }}
-                    className='p-8 rounded-2xl border border-white/10 shadow-lg text-white transition-all mb-8'
+                    className='p-8 lg:w-5/6 sm:w-full rounded-2xl border border-white/10 shadow-lg text-white transition-all mb-8'
                 >
                     <div className='px-4'>
                         <div className='flex items-start gap-4 mb-6'>

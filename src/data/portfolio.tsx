@@ -637,142 +637,196 @@ export const skills = {
 export const projects = [
     {
         id: 1,
-        name: 'AI Code Assistant',
+        name: 'Link and Level UP',
         description:
-            'VS Code extension that uses machine learning to provide intelligent code suggestions and auto-completion',
+            'The project is a training platform that allows users to access training modules, track their progress, and interact with mentors in real-time.',
         longDescription:
-            'A comprehensive VS Code extension that leverages transformer-based language models to understand code context and provide intelligent suggestions. Features include multi-language support, real-time error detection, code refactoring suggestions, and documentation generation.',
-        technologies: ['TypeScript', 'Python', 'TensorFlow', 'VS Code API'],
-        github: 'https://github.com/yourusername/ai-code-assistant',
-        demo: 'https://demo-link.com',
+            'The project is a training platform that allows users to access training modules, track their progress, and interact with mentors in real-time. It was successfully delivered within 6 months',
+        technologies: [
+            'Express',
+            'AWS EC2',
+            'AWS RDS MySQL',
+            'AWS S3',
+            'Socket.IO',
+            'Stripe',
+        ],
+        github: 'https://github.com/Synex-Digital/LLU-Backend',
+        demo: 'https://linkandlevelup.com/',
         image: 'code-assistant',
         color: 'from-orange-500 to-red-500',
         stats: {
-            stars: 1200,
-            users: '5K+',
-            downloads: '50K+',
+            stars: 0,
+            users: '1K+',
+            downloads: '5K+',
         },
         features: [
-            'Context-aware code completion',
-            'Real-time error detection and fixes',
-            'Automatic documentation generation',
-            'Multi-language support (10+ languages)',
-            'Refactoring suggestions',
+            'Connects **trainers**, **players**, and **parents** for seamless communication and coordination',
+            'Sends **email notifications** for updates and reminders to users',
+            'Integrates **AWS S3** for scalable file storage and **AWS EC2** for dynamic cloud computing',
+            'Uses **AWS RDS MySQL** for secure and scalable database management',
+            'Supports **file uploads** for training materials and resources',
+            'Handles **authentication** and **authorization** with **JWT** and **OAuth2** for secure user access',
+            'Provides **real-time communication** between mentors and learners using **Socket.IO** and **Redis scaling**',
+            'Auto-scaling based on user demand, ensuring **reliable performance** for growing user base',
         ],
-        storyBehindIt: `During my final year of university, I noticed my friends spending **hours debugging** simple syntax errors and searching for API documentation. This inspired me to create a tool that could **intelligently understand code context** and provide real-time assistance.
+        storyBehindIt: `CEO of my company was approached by **Md. Jubaer Riyad** (https://www.fiverr.com/jubaerdr), a senior **UI/UX designer** in the freelance field, who had received a project for **Link and LevelUp**, a Canadian enterprise training platform. **Tammy Gauthier**, the CEO of Link and LevelUp, had initially approached Jubaer to handle the **UI/UX** part of the application. However, Jubaer, knowing the technical depth of our company, **Synex Digital**, suggested that we handle the **backend development** for the platform.
 
-![Development Process](https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80)
+                The project began with an in-depth **planning phase**, as we were tasked with building the backend architecture to support **Android**, **iOS**, and **web clients** for the platform, serving nearly **1000 active users**. As the **lead backend developer**, I played a critical role in designing a **stateless microservice API** with **JWT/OAuth2** authentication and integrating **AWS S3** for secure, scalable media handling.
 
-The project started as a **weekend hackathon idea** but quickly gained traction when I shared it on Reddit. Within a week, we had **500+ beta testers** providing valuable feedback. The most challenging part was training the model on diverse codebases while keeping it **lightweight enough** for real-time suggestions.`,
-        howIGotTheWork: `I was working as a **teaching assistant** for an introductory programming course when I realized students were making the same mistakes repeatedly. I pitched the idea to my professor, who connected me with the **university's innovation lab**.
+                Over the course of **6 months**, we developed the backend, tackling **complex database relationships**, designing security protocols, and ensuring the system was robust enough for high-volume use. This experience was invaluable as I learned about **complex architectures**, handled the implementation of various **AWS services**, and worked through intricate security logic to keep the system safe and efficient.
 
-They provided me with:
-- **GPU credits** for model training
-- **Mentorship** from industry experts
-- Access to their **code repository** for training data
+                ![Link and Level UP](/images/LLU.png)`,
+        howIGotTheWork: `I was working at **Synex Digital**(https://www.synexdigital.com/) when I got this opportunity. **Md. Jubaer Riyad** introduced me to the project, which was initially discussed with **Tammy Gauthier**, the CEO of **Link and LevelUp**. The project was meant to handle the **backend development** of the platform, and after discussing the project’s scope, Jubaer suggested us for the task due to our expertise in developing scalable backend solutions. 
 
-The project was also selected for **GitHub's Student Developer Program**, which gave us additional resources and visibility.
+        My team and I worked closely with Jubaer’s design team to ensure seamless integration of the UI/UX design with the backend systems. The project was challenging, as it involved **complex database management**, **user authentication** systems, and **AWS integrations**. Working with **AWS S3**, **EC2**, and **RDS** for data management and storage made me delve deeper into cloud services and **data security**.
 
-![Team Collaboration](https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80)`,
-        whatItDoes: `**AI Code Assistant** is a **VS Code extension** that acts as your intelligent coding companion. Here's what makes it special:
+        ![Team Collaboration](https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80)`,
+        whatItDoes: `The project is a **training platform** that allows users to access training modules, track their progress, and interact with mentors in real-time. Here’s what it offers:
 
-**Core Features:**
-- **Real-time Code Completion**: Suggests complete functions based on context
-- **Error Detection**: Identifies bugs before you even run the code
-- **Smart Refactoring**: Recommends code improvements and optimizations
-- **Auto-Documentation**: Generates docstrings and comments automatically
+                **Core Features:**
+                - **Real-time chat system** between mentors and learners, powered by **Socket.IO** and Redis-based scaling.
+                - **Secure media handling** for training content using **AWS S3** with presigned URLs for faster uploads and downloads.
+                - **Authentication and authorization** using **JWT** and **OAuth2** for secure access control.
+                - **Scalable microservices architecture** for handling growing user demands.
+                - **Payemnt** integration using **Stripe**.
+        
+                **Technical Implementation:**
+                - **Backend API** built with **Node.js** and **Express**.
+                - Integrated **AWS S3** for scalable media handling and file storage.
+                - Developed a **stateless microservice architecture** for flexible and scalable deployment.
 
-**Technical Implementation:**
-- Uses a **fine-tuned GPT-based model** trained on 10M+ lines of code
-- Implements **local caching** for instant suggestions
-- Supports **10+ programming languages** including Python, JavaScript, Java, and C++
+                **Security Features:**
+                - Implemented **Rate Limiting** for handling DDoS Attack.
+                - Designed a multi-layered security system for **user authentication** and **data protection**.
 
-![Feature Demo](https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80)
+                **Impact:**
+                - The backend infrastructure we built supports over **1000 active users** and ensures **seamless user experience** for training delivery.
+                - The **AWS S3 integration** improved the speed of media handling by **40%**, allowing users to access content faster.
+                - The **scalable architecture** ensures that the platform can handle future growth, supporting an increasing number of users without performance degradation.
 
-**Impact:**
-- **50,000+ downloads** in the first 6 months
-- **4.8/5 star rating** on VS Code Marketplace
-- Saves developers an average of **2 hours per week**
-- Featured in **Microsoft's Developer Blog**`,
+                ![Feature Demo](https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80)
+
+                **Results:**
+                - Successfully delivered the backend within **6 months**.
+                - Ensured secure, **fast data access** and **real-time communication** capabilities.
+                - Built a **robust system** for future scalability and efficiency, laying a foundation for future features like **AI-driven learning** and **personalized content recommendations**.
+
+                **Future Developments:**
+                - The project is now poised for future **expansion**, including adding **advanced AI features** and **more interactive learning modules**.`,
     },
     {
         id: 2,
-        name: 'Distributed Task Queue',
+        name: 'My Portfolio',
         description:
-            'High-performance distributed task queue system with real-time monitoring and auto-scaling capabilities',
+            'Interactive, 3D-enabled personal portfolio built with React, React Three Fiber, and Framer Motion, showcasing real-time 3D scenes and seamless UI integration.',
         longDescription:
-            'Enterprise-grade distributed task queue built from scratch, supporting millions of tasks per day with fault tolerance, priority queues, and auto-scaling. Includes comprehensive monitoring dashboard and admin interface.',
-        technologies: ['Go', 'Redis', 'Docker', 'React'],
-        github: 'https://github.com/yourusername/task-queue',
+            'A fully interactive portfolio website combining 3D scenes and UI elements using React, React Three Fiber, and Framer Motion. Features include smooth page transitions, scroll-linked animations, and responsive design with Tailwind CSS.',
+        technologies: [
+            'React',
+            'React Three Fiber',
+            'React Three Drei',
+            'Tailwind CSS',
+            'Framer Motion',
+        ],
+        github: 'https://github.com/ShihabSarar12/myportfolio',
         image: 'task-queue',
         color: 'from-purple-500 to-pink-500',
         stats: {
-            stars: 850,
-            users: '2K+',
-            downloads: '20K+',
+            stars: 5,
         },
         features: [
-            'Processes 1M+ tasks/day',
-            'Auto-scaling based on queue depth',
-            'Priority queues with rate limiting',
-            'Real-time monitoring dashboard',
-            'Fault tolerance with retry logic',
+            'Interactive 3D scene with React Three Fiber',
+            'Smooth page transitions using Framer Motion',
+            'Responsive UI with Tailwind CSS',
+            'Scroll-linked animations syncing UI and 3D scene',
+            'Optimized for mobile responsiveness',
+            'Realistic wave shaders for dynamic water effects',
+            'Custom scroll-based navigation with 3D scene updates',
+            'Imported and rendered 3D models (fish, sharks, divers)',
+            'UI design created with Figma AI and human refinement',
         ],
-        storyBehindIt: `At my internship at a **fintech startup**, I witnessed firsthand how their **legacy task processing system** was causing delays during peak hours. Tasks were getting lost, and there was **no visibility** into what was happening.
+        storyBehindIt: `This portfolio project began as a personal challenge. I wanted to build a website that didn’t just display my work but felt alive — something that blended **3D experiences** with clean, modern UI. I chose **React**, **React Three Fiber**, **Framer Motion**, and **Tailwind CSS** as my core stack, hoping to merge smooth animations with interactive 3D scenes.
 
-I spent my evenings building a **proof-of-concept** using Go and Redis. The CTO was impressed by the **30% performance improvement** in my prototype and greenlit the project for production use.
+        But the moment I started integrating UI elements with 3D objects, the real struggle began. Simple things like making the **navbar scroll to a specific section** while keeping the 3D scene responsive turned into multi-day debugging marathons. Handling **scroll-position mapping**, **canvas responsiveness**, and the **synced motion** between UI and 3D models was far more challenging than I initially expected.
 
-![System Architecture](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80)`,
-        howIGotTheWork: `This project was born out of **necessity** at my internship. The existing system couldn't handle:
-- **Peak load** during market hours
-- **Failed task recovery**
-- Real-time monitoring
+        The project evolved through countless iterations. Framer Motion animations had to be rewritten multiple times to sync properly with R3F, and handling mobile responsiveness—especially on iPhones—tested every ounce of patience. One of the biggest challenges was balancing performance with visual quality, ensuring the site ran smoothly even with heavy 3D elements.
 
-I proposed building a new system and was given **3 months** to deliver a working prototype. The company provided:
-- **Dedicated server resources** for testing
-- **Code review** from senior engineers
-- **Production deployment support**
+        The UI layout was refined with the help of my friend **Tanim Bin Aziz**, whose sense of design helped polish the final look. However, the **core UI wireframe** was generated using **Figma AI**, which gave me a solid foundation to build on. What started as a simple idea grew into a deeply technical, creatively challenging project that pushed me to my limits.`,
 
-After successful deployment, they offered me a **full-time position** and made this project **open-source**.`,
-        whatItDoes: `**Distributed Task Queue** is a **high-performance task processing system** designed for enterprise scale:
+        howIGotTheWork: `This wasn’t a client project—it was something I created to represent everything I’ve learned over the past few years. But the inspiration to build such a complex portfolio came from my experiences working on React, 3D projects, and backend systems, where I constantly needed a platform to showcase my skills.
 
-**Key Capabilities:**
-- **Processes 1M+ tasks daily** with **sub-second latency**
-- **Automatic scaling** based on queue depth and system load
-- **Priority queues** with configurable rate limiting
-- **Fault tolerance** with automatic retries and dead-letter queues
+        To bring this site to life, I relied heavily on:
+        - **React Three Fiber** for the 3D canvas
+        - **Framer Motion** for synchronized animations
+        - **Tailwind CSS** for fast styling
+        - **Figma AI** for generating the base UI structure
+        - Feedback & design improvements from **Tanim Bin Aziz**
 
-**Architecture:**
-- Built with **Go** for maximum concurrency
-- Uses **Redis** for ultra-fast queue operations
-- **Docker containers** for easy deployment
-- **React dashboard** for real-time monitoring
+        ![Programming](https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80)
 
-![Monitoring Dashboard](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80)
+        Throughout the process, I researched 3D integration techniques, canvas optimization tricks, and scroll-based interactions used by modern design studios. The hardest task was getting **UI events (like navbar clicks)** to drive **3D scene transitions** smoothly. Achieving perfect synchronization between scroll, motion values, and canvas state pushed me to deeply understand how R3F and Framer Motion communicate.
 
-**Production Stats:**
-- Handles **10,000 tasks/second** during peak
-- **99.99% uptime** over 2 years
-- Used by **50+ companies** in production
-- Reduced infrastructure costs by **40%** compared to alternatives`,
+        In the end, this project became a personal milestone—proof that I could architect a fully interactive, immersive portfolio from scratch.`,
+
+        whatItDoes: `This portfolio website is a fully interactive, **3D-enabled personal showcase** that blends **UI** and **3D scenes** into a seamless and dynamic experience. The project pushes the boundaries of typical web portfolios by integrating **real-time 3D interactions** with **UI elements**, providing an immersive and engaging experience for users.
+
+                **Core Features:**
+                - **3D Interactive Scene** powered by **React Three Fiber**, where users can interact with the environment and see real-time changes in the 3D world.
+                - **Smooth page transitions** powered by **Framer Motion**, adding fluid animations to UI elements when navigating between sections.
+                - **Responsive UI** built with **Tailwind CSS**, ensuring a consistent, clean design across all devices, from mobile to desktop.
+                - **Scroll-linked animations** that synchronize UI sections with 3D elements, such as objects moving or changing position in the scene based on scroll events.
+                - **Navbar jump-to-section** feature that allows users to scroll to different sections, while simultaneously updating the 3D scene to reflect the corresponding content.
+                - **Optimized mobile behavior** with conditional rendering for unsupported browsers, ensuring users on mobile devices have a smooth experience, even if certain 3D features are limited.
+
+                **Wave Shaders & 3D Scene Interaction:**
+                - The **wave shaders** process dynamic water effects, adding **real-time ocean waves** with complex physics. By leveraging **GLSL shaders**, waves are rendered with both large and small-scale movements, creating **realistic water surfaces** that change over time with user interaction.
+                - The shaders use a **noise function** to simulate natural wave motion and adjust based on the time and scene position, adding depth and immersion to the 3D scene. This process uses multiple wave parameters such as **elevation**, **frequency**, and **speed** to control wave movement.
+                - The shader effect is **optimized** for performance, making sure that the **3D water effect** does not compromise the overall experience, even with multiple animations running concurrently.
+
+
+                ![Wave](/images/Wave.png)
+
+                **Scroll Control Logic:**
+                - The project implements advanced **scroll-based interactions**, where the user scrolls to navigate through the page, triggering corresponding **animations** and updates in the 3D scene. This is made possible through **custom hooks** that map **UI sections** to specific 3D scene positions.
+                - As the user scrolls, the UI updates based on the corresponding section, while the **3D scene** adapts by adjusting the position of models, such as **fish schools**, **sharks**, and **divers** in real-time. This creates a fluid and interactive experience where both UI and 3D elements work in harmony.
+
+                **Models and 3D Content:**
+                - Various **3D models** were imported and optimized for performance, including:
+                    - **Underwater Background** that provides a visually rich and dynamic backdrop for the scene.
+                    - **Fish and Shark models**, which move and interact with the scene as users scroll through the page, adding realism and life to the underwater world.
+                    - **Diver model**, which is animated to simulate realistic movements within the 3D environment.
+                    - **Bubbles** and **sand models** that add subtle effects to enhance the overall visual quality of the 3D experience.
+                - The models were **imported and optimized** for real-time performance, ensuring that the scene runs smoothly even with complex interactions.
+
+                **Technical Implementation:**
+                - Built entirely with **React + TypeScript**, ensuring a scalable, type-safe codebase that can easily be extended and maintained.
+                - **3D models** are rendered via **React Three Fiber**, with **Drei helpers** for easy handling of scenes, lights, and camera controls.
+                - Animation logic is powered by **Framer Motion's motion values**, creating smooth, synchronized animations between UI and 3D components.
+                - **Custom hooks** are used for **UI-to-3D scroll mapping**, linking user scroll events to the 3D scene positions and creating a dynamic, interactive experience.
+                - **Tailwind CSS** is utilized for a clean and scalable design system that is highly responsive and easily customizable.
+                - **Figma AI** was used in conjunction with human refinement for the **UI layout**, ensuring an intuitive and visually appealing interface.
+
+                ![Feature Demo]()
+
+                **Impact:**
+                - Demonstrates mastery of **complex UI–3D integration**, combining cutting-edge web technologies to create an engaging user experience.
+                - Showcases both **full-stack** and **frontend technical depth**, highlighting expertise in **3D rendering**, **animation**, and **interactive web design**.
+                - Serves as a professional, interactive **resume** for recruiters and clients, effectively demonstrating **problem-solving**, **design**, and **development** skills.
+                - Pushes the boundary of typical developer portfolios by using **modern web graphics** and **interactive storytelling** to showcase personal work and expertise.
+                - Represents over **100+ hours** of experimentation, debugging, optimization, and refinement, making this portfolio a true reflection of both technical proficiency and creativity.
+        `,
     },
     {
         id: 3,
-        name: 'Real-Time Analytics Dashboard',
+        name: '3U Nano Satelite',
         description:
-            'Interactive dashboard for visualizing streaming data with sub-second latency',
+            'Real-time telemetry analysis and data visualization system for 3U nanosatellite, ensuring mission success and satellite health monitoring.',
         longDescription:
-            'Modern analytics platform for real-time data visualization, supporting multiple data sources, custom visualizations, and collaborative features. Built for high-frequency data updates with optimized rendering.',
-        technologies: ['React', 'D3.js', 'WebSocket', 'Node.js'],
-        github: 'https://github.com/yourusername/analytics-dashboard',
-        demo: 'https://demo-link2.com',
+            'Developed onboard and ground software for a 3U nanosatellite, focusing on real-time **telemetry analysis** and **data visualization**. The system ensured efficient performance tracking and early anomaly detection for mission success.',
+        technologies: ['React', 'WebSocket', 'Node.js'],
         image: 'dashboard',
         color: 'from-blue-500 to-cyan-500',
-        stats: {
-            stars: 650,
-            users: '1K+',
-            downloads: '15K+',
-        },
+        stats: {},
         features: [
             'Sub-second data updates',
             '30+ chart types',
@@ -780,5 +834,56 @@ After successful deployment, they offered me a **full-time position** and made t
             'Custom data connectors',
             'Export and sharing features',
         ],
+        storyBehindIt: `The opportunity to work on the **3U Nanosatellite project** at **AUST Satellite Communication Laboratory** came as a major milestone in my academic and professional journey. As a student with a keen interest in **satellite communication systems**, I was excited to join the lab as the **Head of Programming**. My primary responsibility was to lead the **software development** and **data visualization** team of **4 engineers**, where we focused on building the onboard systems and ground software necessary for real-time **data interpretation** and **telemetry analysis** for the satellite.
+
+                This project was unique in that it not only involved deep technical challenges but also required close collaboration between **hardware** and **software teams** to ensure seamless integration. The onboard systems we developed allowed for continuous monitoring of the satellite’s performance, while the ground software ensured accurate telemetry analysis, crucial for the success of the satellite mission.
+
+                One of the most rewarding moments of the project was when our work was **featured in The Daily Star**, a reputable news source, which recognized the impact of our research on satellite communication in Bangladesh. Our team had also the privilege of attending **meetings with Bangladesh Satellite Company Limited**, where we discussed potential partnerships and applications for our work. Additionally, I had a one-on-one meeting with the **Vice Chancellor** of the university, where I was able to present the progress of the project and discuss its future potential.
+
+                ![Meeting with VC](/images/Meeting with VC.jpeg)`,
+
+        howIGotTheWork: `This research project began under the mentorship of **Dr. Omar Farrok**, a top 2% scientist from **Stanford University**, who guided the team through the technical and operational aspects of building the **3U nanosatellite**. I was selected to lead the software team after showing my capabilities in backend systems and data visualization during earlier lab projects. Our work received significant attention from both the university and external organizations, leading to collaboration with **Bangladesh Satellite Company Limited** and recognition by major news outlets.
+
+                The lab’s work on satellite communication systems also opened doors for further research in space technology, and I was thrilled to be part of the team that contributed to this pioneering project. My role expanded over time, where I not only led the software team but also became involved in **system integration** and **communication protocols**. 
+
+                ![NanoSatellite 1](/images/NanoSat 4.jpeg)
+                
+                ![NanoSatellite 2](/images/NanoSat 8.jpeg)
+
+                ![NanoSatellite 1](/images/NanoSat 6.jpeg)
+                
+                `,
+
+        whatItDoes: `As **Head of Programming** for the 3U Nanosatellite project, I led the development of **onboard systems** and **ground software** for real-time **telemetry analysis**. This is what the project achieved:
+
+                **Core Features:**
+                - **Onboard telemetry software** for real-time data collection and analysis, ensuring the satellite’s health and mission success.
+                - Developed **data visualization tools** that enabled mission control to interpret telemetry data, track satellite performance, and detect issues early.
+                - Created a **cloud-based dashboard** that provided live telemetry data and historical performance trends.
+                - Designed **automated failure detection systems** that alerted mission control when satellite performance deviated from expected parameters.
+
+                **Technical Implementation:**
+                - **Data visualization** tools built using **Python** and **Matplotlib** for graphical analysis of satellite data.
+                - **Telemetry data** processed in real-time using **Node.js** for communication with onboard systems and ground control.
+                - **Database integration** with **MySQL** (via **AWS RDS**) to store large datasets from the satellite’s telemetry systems.
+                - **Security protocols** for ensuring the integrity of data being transmitted between the satellite and ground station.
+
+                ![Bangladesh Satellite Company Limited](/images/NanoSat news.jpeg)
+
+                **Impact:**
+                - Our software system played a crucial role in ensuring **real-time monitoring** and decision-making during the satellite’s mission.
+                - Successfully **visualized satellite data** and enabled engineers to **detect anomalies** early, contributing to the project’s overall success.
+                - The system was adopted as a model for future satellite missions, showcasing **real-time data analysis** and **telemetry** in **satellite communication**.
+
+
+                **Real-World Impact:**
+                - Featured in **The Daily Star**, our work was recognized as a significant advancement in **satellite communication** in Bangladesh.
+
+                ![Daily Star News](/images/Daily Star.png)
+
+                - **Collaborated with Bangladesh Satellite Company Limited**, discussing potential applications for the satellite's communication system.
+                - Successfully presented the project to the **Vice Chancellor** of the university, gaining recognition for the lab’s contributions to satellite technology.
+
+                This experience was invaluable, as I developed **leadership skills**, **advanced software engineering techniques**, and gained exposure to real-world satellite systems and their applications in communication and data interpretation.`,
     },
 ];

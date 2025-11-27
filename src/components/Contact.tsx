@@ -166,7 +166,23 @@ const Contact = () => {
                             </h3>
                             <form
                                 className='space-y-4'
-                                onSubmit={(e) => e.preventDefault()}
+                                onSubmit={(e) => {
+                                    e.preventDefault();
+                                    const form = e.target as HTMLFormElement;
+                                    window.location.href = `mailto:${encodeURIComponent(
+                                        personalInfo.email
+                                    )}?subject=${encodeURIComponent(
+                                        `Reaching out from your personal website: ${
+                                            (form[2] as HTMLInputElement).value
+                                        }`
+                                    )}&body=${encodeURIComponent(
+                                        `Hey there! My name is ${
+                                            (form[0] as HTMLInputElement).value
+                                        } ${'\n'} ${
+                                            (form[3] as HTMLInputElement).value
+                                        }`
+                                    )}`;
+                                }}
                             >
                                 {[
                                     {
